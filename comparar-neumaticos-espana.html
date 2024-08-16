@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="equivalencia-content">
+        <h2>¿Cómo leer la medida de los neumáticos?</h2>
+        <p style="text-align: center;">
+        <img src="https://www.ingenaga.com/wp-content/uploads/2024/06/Esquema-min.jpg"
+            alt="como leer la medida de los neumaticos" class="como-leer">
+        </p>
+        <p>
+            <b>IMPORTANTE</b>
+        <ul>
+            <li>Si aumentas más del 35% el ancho de la banda de rodadura tienes que hacer prueba de dirección en
+                laboratorio.</li>
+            <br>
+            <li>La rueda no puede sobresalir de la carrocería sea o no equivalente el neumático.</li>
+            <br>
+            <li>No debe haber interferencia entre el neumático y otras partes del vehículo sea o no equivalente.</li>
+        </ul>
+        </p>
+        <h2>Comparador de equivalencias de neumáticos</h2>
+        <p>
+            <span>En esta página puedes comparar fácilmente tu neumático en ficha técnica con otro y descubrir si es equivalente o no.</span><br>
+            <div class="accordion-item">
+                <button class="accordion-header" type="button">Sigue estos sencillos pasos: <span class="icon">+</span></button>
+                <div class="accordion-body">
+                    <ul class="instrucciones">
+                        <li>
+                            <span>Introduce los datos de ambos neumáticos: </span><br>
+                            <span style="padding-left:1.0em;"><b>Medida del neumático: </b>Ancho, perfil, radio, índice de carga y velocidad.</span><br>
+                            <span style="padding-left:1.0em;"><b>Nuevo neumático:</b>Ancho, perfil, radio, índice de carga y velocidad.</span>
+                        </li>
+                        <br>
+                        <li>
+                            <span>Haz clic en &quot;Comparar&quot;</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </p>
+        <div class="comparar-neumaticos operaciones">
+            <img src="https://www.ingenaga.com/wp-content/uploads/2024/05/ancho-neumatico-min.jpg" alt="" class="imagen-ayuda-comparar">
+            <div class="ficha-tecnica operador">
+                <div class="fila-superior">
+                    <span class="titulo">Ficha técnica</span>
+                    <div class="medida">
+                        <span>Medida</span>
+                        <div class="seleccionar-medida">
+                            <span class="medida medida-americana medida-ficha-tecnica">Americana</span>
+                            <span class="medida medida-mm medida-ficha-tecnica selected">Europea</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="controles">
+                    <div class="ancho control">
+                        <span>Ancho</span>
+                        <select name="ficha-tecnica-ancho" id="ficha-tecnica-ancho" class="labeled-dropdown"></select>
+                    </div>
+                    <div class="perfil control">
+                        <span>Perfil</span>
+                        <select name="ficha-tecnica-perfil" id="ficha-tecnica-perfil" class="labeled-dropdown"></select>
+                    </div>
+                    <div class="radio control">
+                        <span>Radio</span>
+                        <select name="ficha-tecnica-radio" id="ficha-tecnica-radio" class="labeled-dropdown"></select>
+                    </div>
+                    <div class="indice-carga control">
+                        <span>Índice de carga</span>
+                        <select name="ficha-tecnica-indice-carga" id="ficha-tecnica-indice-carga"
+                            class="labeled-dropdown"></select>
+                    </div>
+                    <div class="indice-velocidad control">
+                        <span>Índice de velocidad</span>
+                        <select name="ficha-tecnica-indice-velocidad" id="ficha-tecnica-indice-velocidad"
+                            class="labeled-dropdown"></select>
+                    </div>
+                </div>
+            </div> <!-- Operador -->
+            <div class="nuevo-neumatico operador">
+                <div class="fila-superior">
+                    <span class="titulo">Nuevo neumático</span>
+                    <div class="medida">
+                        <span>Medida</span>
+                        <div class="seleccionar-medida">
+                            <span class="medida medida-americana medida-nueva">Americana</span>
+                            <span class="medida medida-mm medida-nueva selected">Europea</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="controles">
+                    <div class="ancho control">
+                        <span>Ancho</span>
+                        <select name="nuevo-neumatico-ancho" id="nuevo-neumatico-ancho"
+                            class="labeled-dropdown"></select>
+                    </div>
+                    <div class="perfil control">
+                        <span>Perfil</span>
+                        <select name="nuevo-neumatico-perfil" id="nuevo-neumatico-perfil"
+                            class="labeled-dropdown"></select>
+                    </div>
+                    <div class="radio control">
+                        <span>Radio</span>
+                        <select name="nuevo-neumatico-radio" id="nuevo-neumatico-radio"
+                            class="labeled-dropdown"></select>
+                    </div>
+                    <div class="indice-carga control">
+                        <span>Índice de carga</span>
+                        <select name="nuevo-neumatico-indice-carga" id="nuevo-neumatico-indice-carga"
+                            class="labeled-dropdown"></select>
+                    </div>
+                    <div class="indice-velocidad control">
+                        <span>Índice de velocidad</span>
+                        <select name="nuevo-neumatico-indice-velocidad" id="nuevo-neumatico-indice-velocidad"
+                            class="labeled-dropdown"></select>
+                    </div>
+                </div>
+            </div> <!-- Operador -->
+            <button class="boton-comparar custom-button">Comparar</button>
+            <div class="resultados-comparacion">
+                <div class="not-db-comparar hide">
+                    <p class="not-db-comparar-text">[mensaje]</p>
+                </div>
+                <div class="exito hide">
+                    <h3>¡FELICIDADES!</h3>
+                    <p class="subtitle">Puedes instalar tus nuevos neumáticos sin problema</p>
+                    <p class="details">
+                        <b>Recuerda</b>
+                        <br>
+                        1. La rueda no puede sobresalir de la carrocería sea o no equivalente el
+                        neumático
+                        <br>
+                        2. No debe haber interferencia entre el neumático y otras partes del vehículo sea o no
+                        equivalente
+                    </p>
+                </div>
+                <div class="error hide">
+                    <h3>Necesitas Homologar</h3>
+                    <p class="subtitle"><b>Contáctanos ahora</b></p>
+                    <p class="subtitle">Deberás <b>ENVIARNOS</b> las siguientes fotografías por</p>
+                    <a href="https://api.whatsapp.com/send/?phone=34633283612">
+                        <div class="whatsapp-contacto">
+                            <img src="https://www.ingenaga.com/wp-content/uploads/2024/06/whatsapp-button.png" alt="link whatsapp">
+                            <!-- <img src="https://www.ingenaga.com/wp-content/uploads/2024/04/WhatsApp_icon.png"
+                                target="_blank" alt="link whatsapp">
+                            <span class="subtitle">633283612</span> -->
+                        </div>
+                    </a>
+                    <p class="details" style="text-align: center;">
+                        Ingresa aquí para ver los requisitos debes cumplir para hacerlo.
+                        <br>
+                        <a href="https://www.ingenaga.com/legalizarruedas/" target="_blank"
+                            alt="legalizar ruedas">https://www.ingenaga.com/legalizarruedas/</a>
+                    </p>
+                </div>
+            </div>
+        </div>        
+    </div> <!-- Contenedor principal -->
+</body>
+
+</html>

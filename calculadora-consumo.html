@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='calculo-consumo.css'>
+    <script src='calculo-consumo.js'></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="calculadora-consumo">
+        <h2 class="calculadora-toggle-header">
+            <span class="icon">▼</span>Instrucciones para el uso de la calculadora de consumos
+        </h2>
+        <div class="calculadora-toggle-content">
+            <p>Con esta herramienta podrás calcular tus consumos diarios que te ayudarán a dimensionar tu instalación eléctrica.</p>
+            <p>Como algunas veces se hace difícil saber las potencias de las cosas que quieres poner te ayudamos con una lista de las potencias que suelen tener los elementos eléctricos más usados en un camper:</p>
+            <div class="demo-table-container">
+                <table class="referencia-potencia-table">
+                    <thead>
+                        <tr>
+                            <th colspan=2>TABLA DE REFERENCIA PARA POTENCIAS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tira led</td>
+                            <td>5-10W por metro</td>
+                        </tr>
+                        <tr>
+                            <td>Puntos de luz plafones</td>
+                            <td>5W</td>
+                        </tr>
+                        <tr>
+                            <td>Flexo lectura</td>
+                            <td>5W</td>
+                        </tr>
+                        <tr>
+                            <td>Ventilador claraboya</td>
+                            <td>25W</td>
+                        </tr>
+                        <tr>
+                            <td>Calentador agua</td>
+                            <td>200W</td>
+                        </tr>
+                        <tr>
+                            <td>Calefacción 2KW</td>
+                            <td>25W</td>
+                        </tr>
+                        <tr>
+                            <td>Calefacción 4KW</td>
+                            <td>45W</td>
+                        </tr>
+                        <tr>
+                            <td>Extractor baño</td>
+                            <td>5 - 7W</td>
+                        </tr>
+                        <tr>
+                            <td>Bomba de agua sumergible</td>
+                            <td>20W</td>
+                        </tr>
+                        <tr>
+                            <td>Bomba de agua de presión</td>
+                            <td>48W</td>
+                        </tr>
+                        <tr>
+                            <td>Inversor 1000W</td>
+                            <td>10-20W</td>
+                        </tr>
+                        <tr>
+                            <td>Inversor 2000W</td>
+                            <td>20-40W</td>
+                        </tr>
+                        <tr>
+                            <td>TV</td>
+                            <td>65W</td>
+                        </tr>
+                        <tr>
+                            <td>Cargador de portatil</td>
+                            <td>65W</td>
+                        </tr>
+                        <tr>
+                            <td>Cargador de movil</td>
+                            <td>20W</td>
+                        </tr>
+                        <tr class="last-row">
+                            <td>Nevera</td>
+                            <td>60W - 72W</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Es muy importante que todo lo que elijas sea eficiente energéticamente hablando, pero sobre todo la nevera, ya que, suele ser uno de los mayores consumos diarios que hay en las camper.</p>
+            <p>Las neveras eficientes suelen tener un consumo diario de entre 190Wh y 250Wh, ya que aunque la nevera esté conectada 24 horas su compresor no está funcionando las 24 horas. De media suele trabajar de 6 a 8 horas dependiendo del calor que haga fuera, y de la temperatura que pongamos interna de la nevera.</p>
+            <p>En cuanto al inversor, lo que hay que poner en la tabla no es la potencia que ofrece a 230V, ya que vas a calcular los consumos reales, es el consumo que tiene el simple hecho de estar encendido.</p>
+            <p>Las calefacciones estacionarias tienen un consumo eléctrico, aunque vayan a gasoil, que hay que tener en cuenta y es el que proponemos en la tabla de referencia.</p>
+        </div>
+
+        <h2 class="calculadora-toggle-header2">
+            <span class="icon">▼</span>¿Cómo calculo la potencia si en las placas de especificaciones me da una intensidad en Amperios?
+        </h2>
+        <div class="calculadora-toggle-content2">
+            <p>Por ejemplo, podemos ver que una bomba de agua de 12V nos dice que consume 5 Amperios mientras se usa. Para sacar la potencia tendrías que multiplicar:</p>
+            <p>Voltaje x Amperios = Potencia<br>5 amperios x 12 Voltios = 60 Watios</p>
+        </div>
+        <h2 class="calculadora-toggle-header">
+            <span class="icon" style="visibility:hidden;">▼</span>calculadora de consumos
+        </h2>
+        <div class="calculadora-operations-container">
+            <div class="consumo-operations">
+                <div class="consumo-table-header">
+                    <div style="width: 30%;">Elemento</div>
+                    <div style="width: 15%;">Potencia<br><span>(Watios)</span></div>
+                    <div style="width: 15%;">Tensión<br><span>(Voltios)</span></div>
+                    <div style="width: 20%;">Tiempo de <br> uso/día</div>
+                    <div style="width: 20%;">Unidades</div>
+                </div>
+                <div class="consumo-table-body">
+                    <div class="consumo-table-row-demo hide">
+                        <div style="width: 30%;" class="consumo-elemento">
+                            <!-- <input list="consumo-options" class="consumo-elemento" id="autocomplete-input"
+                                placeholder="Selecciona o escriba el elemento aquí"> -->
+                            <select id="consumo-options">
+                                <option value="Iluminación tira de LED">Iluminación tira de LED</option>
+                                <option value="Puntos de luz (plafones)">Puntos de luz (plafones)</option>
+                                <option value="Flexos lectura">Flexos lectura</option>
+                                <option value="Calefacción estacionaria">Calefacción estacionaria</option>
+                                <option value="Extractores">Extractores</option>
+                                <option value="Ventilador claraboya">Ventilador claraboya</option>
+                                <option value="Bomba de agua sumergible">Bomba de agua sumergible</option>
+                                <option value="Bomba agua presión">Bomba agua presión</option>
+                                <option value="Calentador de agua">Calentador de agua</option>
+                                <option value="Cargador de baterías">Cargador de baterías</option>
+                                <option value="Cargador ordenador portátil 12V">Cargador ordenador portátil 12V</option>
+                                <option value="Cargador ordenador portátil 230V 65W">Cargador ordenador portátil 230V 65W</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div style="width: 15%;" class="consumo-potencia">
+                            <input type="number" name="option-watts" class="option-watts" min="0" max="1200" step="5"
+                                value="10" />
+                        </div>
+                        <div style="width: 15%;">
+                            <select name="options-voltios" class="option-voltios" id="">
+                                <option value="12">12 V</option>
+                                <option value="230">230 V</option>
+                            </select>
+                        </div>
+                        <div style="width: 20%;">
+                            <select name="options-tiempo" class="option-tiempo" id="">
+                                <option value="0.08">5 min</option>
+                                <option value="0.16">10 min</option>
+                                <option value="0.25">15 min</option>
+                                <option value="0.5">30 min</option>
+                                <option value="0.75">45 min</option>
+                                <option value="1" selected>1 hora</option>
+                                <option value="1.5">1.5 horas</option>
+                                <option value="2">2 horas</option>
+                                <option value="3">3 horas</option>
+                                <option value="4">4 horas</option>
+                                <option value="5">5 horas</option>
+                                <option value="6">6 horas</option>
+                                <option value="7">7 horas</option>
+                                <option value="8">8 horas</option>
+                                <option value="9">9 horas</option>
+                                <option value="10">10 horas</option>
+                                <option value="11">11 horas</option>
+                                <option value="12">12 horas</option>
+                                <option value="13">13 horas</option>
+                                <option value="14">14 horas</option>
+                                <option value="15">15 horas</option>
+                            </select>
+                        </div>
+                        <div style="width: 20%; display: flex;flex-direction: column;">
+                            <!-- <input type="number" name="options-unidades" class="option-unidades" min="0" max="20" step="1"
+                                value="1" style="width: 75%;"/> -->
+                            <select name="option-unidades" class="option-unidades" style="width: 75%;" id="">
+                                <option value="1" selected></option>
+                                <option value="2"></option>
+                                <option value="3"></option>
+                                <option value="4"></option>
+                                <option value="5"></option>
+                                <option value="6"></option>
+                                <option value="7"></option>
+                                <option value="8"></option>
+                                <option value="9"></option>
+                                <option value="10"></option>
+                                <option value="11"></option>
+                                <option value="12"></option>
+                                <option value="13"></option>
+                                <option value="14"></option>
+                                <option value="15"></option>
+                                <option value="16"></option>
+                                <option value="17"></option>
+                                <option value="18"></option>
+                                <option value="19"></option>
+                                <option value="20"></option>
+                            </select>
+                            <img src="https://www.ingenaga.com/wp-content/uploads/2024/07/Basurero.png" onclick="deleteButtonClick(event)" width="32px" height="40px" alt="" title="Eliminar elemento">
+                        </div>
+                    </div>
+                </div>
+                <button class="add-elemento">
+                    <span>⨁</span>&nbsp;<span>Agregar elemento</span>
+                </button>
+                <div class="consumo-resultados">
+                    <div class="consumo-resultados-header">
+                        Resultados
+                    </div>
+                    <div class="consumo-resultados-row">
+                        <span class="consumo-resultados-title">Suma de consumos a 12V</span>
+                        <span class="consumo-resultados-12-value">&nbsp;</span>
+                    </div>
+                    <div class="consumo-resultados-row">
+                        <span class="consumo-resultados-title">Suma de consumos a 230V</span>
+                        <span class="consumo-resultados-230-value">&nbsp;</span>
+                    </div>
+                    <div class="consumo-resultados-row">
+                        <span class="consumo-resultados-title">Suma de consumos totales</span>
+                        <span class="consumo-resultados-total-value">&nbsp;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- Contenedor principal -->
+</body>
+
+</html>

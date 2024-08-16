@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="equivalencia-content">
+        <h2>Compatibilidad de llantas</h2>
+        <p style="text-align: center;">
+            <img src="https://www.ingenaga.com/wp-content/uploads/2024/06/llanta-partes.png"
+                alt="como leer la medida de los neumaticos" class="como-leer" style="max-height: 370px;">
+            </p>
+        <h4 class="big-subtitle">Comprueba la compatibilidad entre un neumático y una llanta.</h4>
+        <p><b>¡Encuentra las llantas perfectas para tus neumáticos!</b></p>
+        <p>Con esta herramienta, seleccionarás las llantas compatibles con tus neumáticos</p>        
+        <div class="accordion-item">
+            <button class="accordion-header" type="button">Sigue estos sencillos pasos: <span class="icon">+</span></button>
+            <div class="accordion-body">
+                <ol>
+                    <li>
+                        <span>Ingresa los datos de tu neumático: </span><br>
+                        <span style="padding-left:1.0em;"><b>Medida del neumático: </b>Ancho, perfil y radio.</span><br>
+                    </li>
+                    <li>Haz clic en "Buscar" y descubre  en qué anchos de llantas es compatible tu neumático</li>
+                </ol>
+            </div>
+        </div>
+        <div class="buscar-neumaticos operaciones">
+            <img src="https://www.ingenaga.com/wp-content/uploads/2024/06/neumatico-ancho.png" alt=""
+                class="imagen-ayuda-buscar">
+            <div class="ficha-tecnica operador">
+                <div class="fila-superior">
+                    <span class="titulo" style="visibility: hidden;">Ficha técnica</span>
+                    <div class="medida">
+                        <span>Medida</span>
+                        <div class="seleccionar-medida">
+                            <span class="medida medida-buscador medida-americana">Americana</span>
+                            <span class="medida medida-buscador medida-mm selected">Europea</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="controles">
+                    <div class="ancho-ring control">
+                        <span>Ancho</span>
+                        <select name="buscador-ancho" id="buscador-ancho" class="labeled-dropdown"></select>
+                    </div>
+                    <div class="perfil-ring control">
+                        <span>Perfil</span>
+                        <select name="buscador-perfil" id="buscador-perfil" class="labeled-dropdown"></select>
+                    </div>
+                    <div class="radio-ring control">
+                        <span>Radio</span>
+                        <select name="buscador-radio" id="buscador-radio" class="labeled-dropdown"></select>
+                    </div>
+                </div>
+            </div> <!-- Operador -->
+            <button class="boton-compatibilidad custom-button">Buscar</button>
+            <div class="resultados-busqueda-contenedor hide">
+                <p style="text-align: center;">
+                    El ancho de la llanta deberá de estar entre los siguientes valores
+                    <br>
+                    <span class="replace-modelo"></span>
+                    <span class="replace-busqueda"></span>
+                </p>
+                <div class="neumaticos-resultados">
+                </div>
+            </div>
+            <div class="resultados-busqueda-contenedor-empty hide">
+                <h3 style="color:#e30613;text-align: center;">No hay resultados</h3>
+                <a href="https://api.whatsapp.com/send/?phone=34633283612">
+                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/06/whatsapp-button.png" alt="link whatsapp" class="img-contacto-whatsapp">
+                </a>
+            </div>
+            <div class="not-db-buscar hide">
+                <p class="not-db-buscar-text">[mensaje]</p>
+            </div>
+        </div>
+    </div> <!-- Contenedor principal -->
+</body>
+
+</html>

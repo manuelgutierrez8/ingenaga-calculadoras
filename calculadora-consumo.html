@@ -21,8 +21,10 @@
             <span class="icon">▼</span>Instrucciones para el uso de la calculadora de consumos
         </h2>
         <div class="calculadora-toggle-content">
-            <p>Con esta herramienta podrás calcular tus consumos diarios que te ayudarán a dimensionar tu instalación eléctrica.</p>
-            <p>Como algunas veces se hace difícil saber las potencias de las cosas que quieres poner te ayudamos con una lista de las potencias que suelen tener los elementos eléctricos más usados en un camper:</p>
+            <p>Con esta herramienta podrás calcular tus consumos diarios que te ayudarán a dimensionar tu instalación
+                eléctrica.</p>
+            <p>Como algunas veces se hace difícil saber las potencias de las cosas que quieres poner te ayudamos con una
+                lista de las potencias que suelen tener los elementos eléctricos más usados en un camper:</p>
             <div class="demo-table-container">
                 <table class="referencia-potencia-table">
                     <thead>
@@ -98,17 +100,24 @@
                     </tbody>
                 </table>
             </div>
-            <p>Es muy importante que todo lo que elijas sea eficiente energéticamente hablando, pero sobre todo la nevera, ya que, suele ser uno de los mayores consumos diarios que hay en las camper.</p>
-            <p>Las neveras eficientes suelen tener un consumo diario de entre 190Wh y 250Wh, ya que aunque la nevera esté conectada 24 horas su compresor no está funcionando las 24 horas. De media suele trabajar de 6 a 8 horas dependiendo del calor que haga fuera, y de la temperatura que pongamos interna de la nevera.</p>
-            <p>En cuanto al inversor, lo que hay que poner en la tabla no es la potencia que ofrece a 230V, ya que vas a calcular los consumos reales, es el consumo que tiene el simple hecho de estar encendido.</p>
-            <p>Las calefacciones estacionarias tienen un consumo eléctrico, aunque vayan a gasoil, que hay que tener en cuenta y es el que proponemos en la tabla de referencia.</p>
+            <p>Es muy importante que todo lo que elijas sea eficiente energéticamente hablando, pero sobre todo la
+                nevera, ya que, suele ser uno de los mayores consumos diarios que hay en las camper.</p>
+            <p>Las neveras eficientes suelen tener un consumo diario de entre 190Wh y 250Wh, ya que aunque la nevera
+                esté conectada 24 horas su compresor no está funcionando las 24 horas. De media suele trabajar de 6 a 8
+                horas dependiendo del calor que haga fuera, y de la temperatura que pongamos interna de la nevera.</p>
+            <p>En cuanto al inversor, lo que hay que poner en la tabla no es la potencia que ofrece a 230V, ya que vas a
+                calcular los consumos reales, es el consumo que tiene el simple hecho de estar encendido.</p>
+            <p>Las calefacciones estacionarias tienen un consumo eléctrico, aunque vayan a gasoil, que hay que tener en
+                cuenta y es el que proponemos en la tabla de referencia.</p>
         </div>
 
         <h2 class="calculadora-toggle-header2">
-            <span class="icon">▼</span>¿Cómo calculo la potencia si en las placas de especificaciones me da una intensidad en Amperios?
+            <span class="icon">▼</span>¿Cómo calculo la potencia si en las placas de especificaciones me da una
+            intensidad en Amperios?
         </h2>
         <div class="calculadora-toggle-content2">
-            <p>Por ejemplo, podemos ver que una bomba de agua de 12V nos dice que consume 5 Amperios mientras se usa. Para sacar la potencia tendrías que multiplicar:</p>
+            <p>Por ejemplo, podemos ver que una bomba de agua de 12V nos dice que consume 5 Amperios mientras se usa.
+                Para sacar la potencia tendrías que multiplicar:</p>
             <p>Voltaje x Amperios = Potencia<br>5 amperios x 12 Voltios = 60 Watios</p>
         </div>
         <h2 class="calculadora-toggle-header">
@@ -140,7 +149,8 @@
                                 <option value="Calentador de agua">Calentador de agua</option>
                                 <option value="Cargador de baterías">Cargador de baterías</option>
                                 <option value="Cargador ordenador portátil 12V">Cargador ordenador portátil 12V</option>
-                                <option value="Cargador ordenador portátil 230V 65W">Cargador ordenador portátil 230V 65W</option>
+                                <option value="Cargador ordenador portátil 230V 65W">Cargador ordenador portátil 230V
+                                    65W</option>
                                 <option value="Otro">Otro</option>
                             </select>
                         </div>
@@ -204,7 +214,9 @@
                                 <option value="19"></option>
                                 <option value="20"></option>
                             </select>
-                            <img src="https://www.ingenaga.com/wp-content/uploads/2024/07/Basurero.png" onclick="deleteButtonClick(event)" width="32px" height="40px" alt="" title="Eliminar elemento">
+                            <img src="https://www.ingenaga.com/wp-content/uploads/2024/07/Basurero.png"
+                                onclick="deleteButtonClick(event)" width="32px" height="40px" alt=""
+                                title="Eliminar elemento">
                         </div>
                     </div>
                 </div>
@@ -227,6 +239,80 @@
                         <span class="consumo-resultados-title">Suma de consumos totales</span>
                         <span class="consumo-resultados-total-value">&nbsp;</span>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-calculations-container hide">
+
+
+            <h2 class="calculadora-toggle-header">
+                Cálculo de paneles solares
+            </h2>
+            <h3 class="blue-subtitle">¿Desea instalar un panel solar?</h3>
+            <div class="panel-question">
+                <div>
+                    <input type="radio" value="1" name="solar-panel" id="panel-yes" onchange="handlePanelChange()" checked/>
+                    <label for="panel-yes">Si</label>
+                </div>
+                <div>
+                    <input type="radio" value="0" name="solar-panel" id="panel-no" onchange="handlePanelChange()"/>
+                    <label for="panel-no">No</label>
+                </div>
+            </div>
+            <div class="card-panel --yellow">
+                <div class="top-row">
+                    <span>Panel Solar</span>
+                    <div class="circle-image">
+                        <img src="https://www.ingenaga.com/wp-content/uploads/2024/09/ChGYFg.tif@8x-8.png" alt="">
+                    </div>
+                </div>
+                <div class="card-panel-content">
+                    <div class="consumo-resultados-row panel-row">
+                        <span>Consumos totales</span>
+                        <span class="panel-solar-consumo-total">&nbsp;</span>
+                    </div>
+                    <div class="consumo-resultados-row blue-bg panel-row" style="margin-bottom:20px">
+                        <span>Potencia mínima del panel solar</span>
+                        <span class="panel-solar-potencia-minima">&nbsp;</span>
+                    </div>
+                    <small class="panel-note"><i><b><span>ⓘ &nbsp;</span><span>La potencia mínima recomendada la podrá
+                                    instalar con uno o más paneles.</span></b></i></small>
+                </div>
+            </div>
+            <h2 class="calculadora-toggle-header">
+                Cálculo de batería auxiliar
+            </h2>
+            <h3 class="blue-subtitle">Elija una opción del tipo de batería</h3>
+            <div class="fila-bateria">
+                <div class="medida">
+                    <div class="seleccionar-medida">
+                        <span class="medida medida-buscador medida-life selected">LiFePO4</span>
+                        <span class="medida medida-buscador medida-gel">GEL/AGM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-panel --green">
+                <div class="top-row">
+                    <span class="tipo-bateria-text">LiFePO4</span>
+                    <div class="circle-image">
+                        <img style="width: 100%;" src="https://www.ingenaga.com/wp-content/uploads/2024/09/bateria-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="card-panel-content">
+                    <span class="with-solar-panel-text">&nbsp;</span>
+                    <div class="consumo-resultados-row panel-row potencia-panel-elegido">
+                        <span>Potencia del panel solar elegido (W)</span>
+                        <input type="number" min="0" max="1000" step="10" class="potencia-panel-elegido-value" onchange="calcularBateria()">
+                    </div>
+                    <div class="consumo-resultados-row panel-row numero-dias-autonomia">
+                        <span>Número de días de autonomía</span>
+                        <input type="number" min="1" max="10" step="1" class="numero-dias-autonomia-value" onchange="calcularBateria()">
+                    </div>
+                    <div class="consumo-resultados-row blue-bg panel-row calculo-bateria-minima" style="margin-bottom:20px">
+                        <span>Cálculo de batería mínima</span>
+                        <span class="calculo-bateria-minima-value">&nbsp;</span>
+                    </div>
+                    <small class="panel-note"><i><b><span>ⓘ &nbsp;</span><span>Lo normal es calcular la instalación con 2 a 3 días de autonomía.</span></b></i></small>
                 </div>
             </div>
         </div>

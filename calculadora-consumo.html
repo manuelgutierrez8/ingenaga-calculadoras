@@ -246,24 +246,27 @@
 
 
             <h2 class="calculadora-toggle-header">
-                Cálculo de paneles solares
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/panelsolar.png" alt="panel solar"
+                    class="row-icon">
+                PANEL SOLAR
             </h2>
             <h3 class="blue-subtitle">¿Desea instalar un panel solar?</h3>
             <div class="panel-question">
                 <div>
-                    <input type="radio" value="1" name="solar-panel" id="panel-yes" onchange="handlePanelChange()" checked/>
-                    <label for="panel-yes">Si</label>
+                    <input type="radio" value="1" name="solar-panel" id="panel-yes" onchange="handlePanelChange()"
+                        checked /><label for="panel-yes">Si</label>
                 </div>
                 <div>
-                    <input type="radio" value="0" name="solar-panel" id="panel-no" onchange="handlePanelChange()"/>
-                    <label for="panel-no">No</label>
+                    <input type="radio" value="0" name="solar-panel" id="panel-no"
+                        onchange="handlePanelChange()" /><label for="panel-no">No</label>
                 </div>
             </div>
-            <div class="card-panel --yellow">
+            <div class="card-panel --green">
                 <div class="top-row">
                     <span>Panel Solar</span>
                     <div class="circle-image">
-                        <img src="https://www.ingenaga.com/wp-content/uploads/2024/09/ChGYFg.tif@8x-8.png" alt="">
+                        <!-- <img src="https://www.ingenaga.com/wp-content/uploads/2024/09/ChGYFg.tif@8x-8.png" alt=""> -->
+                        <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="">
                     </div>
                 </div>
                 <div class="card-panel-content">
@@ -280,12 +283,14 @@
                 </div>
             </div>
             <h2 class="calculadora-toggle-header">
-                Cálculo de batería auxiliar
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/bateriaaux.png" alt="bateria auxiliar"
+                    class="row-icon">
+                BATERÍA AUXILIAR
             </h2>
             <h3 class="blue-subtitle">Elija una opción del tipo de batería</h3>
             <div class="fila-bateria">
                 <div class="medida">
-                    <div class="seleccionar-medida">
+                    <div class="seleccionar-medida-bateria">
                         <span class="medida medida-buscador medida-life selected">LiFePO4</span>
                         <span class="medida medida-buscador medida-gel">GEL/AGM</span>
                     </div>
@@ -295,24 +300,192 @@
                 <div class="top-row">
                     <span class="tipo-bateria-text">LiFePO4</span>
                     <div class="circle-image">
-                        <img style="width: 100%;" src="https://www.ingenaga.com/wp-content/uploads/2024/09/bateria-icon.png" alt="">
+                        <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="">
                     </div>
                 </div>
                 <div class="card-panel-content">
                     <span class="with-solar-panel-text">&nbsp;</span>
                     <div class="consumo-resultados-row panel-row potencia-panel-elegido">
                         <span>Potencia del panel solar elegido (W)</span>
-                        <input type="number" min="0" max="1000" step="10" class="potencia-panel-elegido-value" onchange="calcularBateria()">
+                        <input type="number" min="0" max="1000" step="5" class="potencia-panel-elegido-value"
+                            onchange="calcularBateria()">
                     </div>
                     <div class="consumo-resultados-row panel-row numero-dias-autonomia">
                         <span>Número de días de autonomía</span>
-                        <input type="number" min="1" max="10" step="1" class="numero-dias-autonomia-value" onchange="calcularBateria()">
+                        <input type="number" min="1" max="30" step="1" class="numero-dias-autonomia-value"
+                            onchange="calcularBateria()">
                     </div>
-                    <div class="consumo-resultados-row blue-bg panel-row calculo-bateria-minima" style="margin-bottom:20px">
+                    <div class="consumo-resultados-row blue-bg panel-row calculo-bateria-minima"
+                        style="margin-bottom:20px">
                         <span>Cálculo de batería mínima</span>
                         <span class="calculo-bateria-minima-value">&nbsp;</span>
                     </div>
-                    <small class="panel-note"><i><b><span>ⓘ &nbsp;</span><span>Lo normal es calcular la instalación con 2 a 3 días de autonomía.</span></b></i></small>
+                    <small class="panel-note"><i><b><span>ⓘ &nbsp;</span><span>Lo normal es calcular la instalación con
+                                    2 a 3 días de autonomía.</span></b></i></small>
+                </div>
+            </div>
+            <!-- Regulador Solar -->
+            <div class="panel-regulador-solar">
+                <h2 class="calculadora-toggle-header">
+                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/bateriaaux.png" alt="bateria auxiliar"
+                        class="row-icon">
+                    REGULADOR SOLAR
+                </h2>
+                <h3 class="blue-subtitle">Elija una opción del tipo de batería</h3>
+                <div class="fila-bateria">
+                    <div class="medida">
+                        <div class="seleccionar-medida-bateria">
+                            <span class="medida medida-buscador medida-life selected">LiFePO4</span>
+                            <span class="medida medida-buscador medida-gel">GEL/AGM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-panel --green">
+                    <div class="top-row">
+                        <span class="tipo-bateria-text">LiFePO4</span>
+                        <div class="circle-image">
+                            <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="">
+                        </div>
+                    </div>
+                    <div class="card-panel-content">
+                        <div class="consumo-resultados-row panel-row potencia-panel-elegido">
+                            <span>Potencia del panel solar elegido (W)</span>
+                            <input type="number" min="0" max="1000" step="5"
+                                class="potencia-panel-elegido-regulador-value" onchange="calcularReguladorSolar()">
+                        </div>
+                        <div class="consumo-resultados-row blue-bg panel-row calculo-regulador-solar-minimo"
+                            style="margin-bottom:20px">
+                            <span>Regulador solar mínimo a instalar (A)</span>
+                            <span class="calculo-regulador-solar-minimo-value">&nbsp;</span>
+                        </div>
+                        <!-- <small class="panel-note"><i><b><span>ⓘ &nbsp;</span><span>Lo normal es calcular la instalación con 2 a 3 días de autonomía.</span></b></i></small> -->
+                    </div>
+                </div>
+            </div>
+            <!-- Seccion Booster -->
+            <h2 class="calculadora-toggle-header">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/booster.png" alt="booster"
+                    class="row-icon">
+                BOOSTER
+            </h2>
+            <h3 class="blue-subtitle">¿Vas a conectar las baterías principal y secundaria con un booster?</h3>
+            <small class="booster-panel-note"><i><b><span>ⓘ &nbsp;</span><span>Si vas a instalar un relé ten en cuenta
+                            que cumpla con R10 y tenga una capacidad mínima de 120A.</span></b></i></small>
+            <div class="panel-question booster-panel-question" style="margin-top: 10px;">
+                <div>
+                    <input type="radio" value="1" name="booster" id="panel-booster-yes"
+                        onchange="handleBoosterPanelChange()" checked /><label for="panel-booster-yes">Si</label>
+                </div>
+                <div>
+                    <input type="radio" value="0" name="booster" id="panel-booster-no"
+                        onchange="handleBoosterPanelChange()" /><label for="panel-booster-no">No</label>
+                </div>
+            </div>
+            <h3 class="blue-subtitle booster-subtitle">Elija una opción del tipo de batería</h3>
+            <div class="fila-bateria booster-fila-bateria">
+                <div class="medida">
+                    <div class="seleccionar-medida-bateria">
+                        <span class="medida medida-buscador medida-life selected">LiFePO4</span>
+                        <span class="medida medida-buscador medida-gel">GEL/AGM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-panel booster-card-panel --green">
+                <div class="top-row">
+                    <span class="tipo-bateria-text">LiFePO4</span>
+                    <div class="circle-image">
+                        <!-- <img src="https://www.ingenaga.com/wp-content/uploads/2024/09/ChGYFg.tif@8x-8.png" alt=""> -->
+                        <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="">
+                    </div>
+                </div>
+                <div class="card-panel-content">
+                    <div class="consumo-resultados-row panel-row">
+                        <span>Capacidad de batería elegida (Ah)</span>
+                        <input type="number" min="0" max="1000" step="5" class="capacidad-bateria-booster"
+                            onchange="calcularBooster()">
+                    </div>
+                    <div class="consumo-resultados-row blue-bg panel-row" style="margin-bottom:20px">
+                        <span>Booster mínimo a instalar (A)</span>
+                        <span class="booster-minimo-instalar">&nbsp;</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Inversor -->
+            <h2 class="calculadora-toggle-header">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/inversor.png" alt="booster"
+                    class="row-icon">
+                INVERSOR
+            </h2>
+            <h3 class="blue-subtitle">¿Vas a instalar un inversor?</h3>
+            <div class="panel-question booster-panel-question" style="margin-top: 10px;">
+                <div>
+                    <input type="radio" value="1" name="inversor" id="panel-inversor-yes"
+                        onchange="handleInversorPanelChange()" checked /><label for="panel-inversor-yes">Si</label>
+                </div>
+                <div>
+                    <input type="radio" value="0" name="inversor" id="panel-inversor-no"
+                        onchange="handleInversorPanelChange()" /><label for="panel-inversor-no">No</label>
+                </div>
+            </div>
+            <div class="card-panel inversor-card-panel --green">
+                <div class="top-row">
+                    <span class="tipo-bateria-text-no-edit">&nbsp;</span>
+                    <div class="circle-image">
+                        <!-- <img src="https://www.ingenaga.com/wp-content/uploads/2024/09/ChGYFg.tif@8x-8.png" alt=""> -->
+                        <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="">
+                    </div>
+                </div>
+                <div class="card-panel-content">
+                    <div class="consumo-resultados-row blue-bg panel-row" style="margin-bottom:20px">
+                        <span>Potencia mínima del inversor a instalar (W)</span>
+                        <span class="potencia-minima-inversor">&nbsp;</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Seccion Cargador -->
+            <h2 class="calculadora-toggle-header">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/cargadorbateria.png" alt="cargador bateria"
+                    class="row-icon">
+                CARGADOR DE BATERÍA
+            </h2>
+            <h3 class="blue-subtitle">¿Vas a instalar un cargador de baterías?</h3>
+            <div class="panel-question booster-panel-question" style="margin-top: 10px;">
+                <div>
+                    <input type="radio" value="1" name="cargador" id="panel-cargador-yes"
+                        onchange="handleCargadorPanelChange()" checked /><label for="panel-cargador-yes">Si</label>
+                </div>
+                <div>
+                    <input type="radio" value="0" name="cargador" id="panel-cargador-no"
+                        onchange="handleCargadorPanelChange()" /><label for="panel-cargador-no">No</label>
+                </div>
+            </div>
+            <h3 class="blue-subtitle cargador-subtitle">Elija una opción del tipo de batería</h3>
+            <div class="fila-bateria cargador-fila-bateria">
+                <div class="medida">
+                    <div class="seleccionar-medida-bateria">
+                        <span class="medida medida-buscador medida-life selected">LiFePO4</span>
+                        <span class="medida medida-buscador medida-gel">GEL/AGM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-panel cargador-card-panel --green">
+                <div class="top-row">
+                    <span class="tipo-bateria-text">LiFePO4</span>
+                    <div class="circle-image">
+                        <!-- <img src="https://www.ingenaga.com/wp-content/uploads/2024/09/ChGYFg.tif@8x-8.png" alt=""> -->
+                        <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="">
+                    </div>
+                </div>
+                <div class="card-panel-content">
+                    <div class="consumo-resultados-row panel-row">
+                        <span>Capacidad de batería elegida (Ah)</span>
+                        <input type="number" min="0" max="1000" step="5" class="capacidad-bateria-cargador"
+                            onchange="calcularCargador()">
+                    </div>
+                    <div class="consumo-resultados-row blue-bg panel-row" style="margin-bottom:20px">
+                        <span> Cargador de batería mínimo (A)</span>
+                        <span class="cargador-minimo-instalar">&nbsp;</span>
+                    </div>
                 </div>
             </div>
         </div>

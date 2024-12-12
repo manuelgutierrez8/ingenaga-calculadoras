@@ -214,15 +214,14 @@
                                 <option value="19"></option>
                                 <option value="20"></option>
                             </select>
-                            <img src="https://www.ingenaga.com/wp-content/uploads/2024/07/Basurero.png"
+                            <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/trash.png"
                                 onclick="deleteButtonClick(event)" width="32px" height="40px" alt=""
                                 title="Eliminar elemento">
                         </div>
                     </div>
                 </div>
-                <button class="add-elemento">
-                    <span>⨁</span>&nbsp;<span>Agregar elemento</span>
-                </button>
+                <!-- <button class="add-elemento"><span>⨁</span>&nbsp;<span>Agregar elemento</span></button> -->
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/add-element.png" alt="" width="200px" class="add-elemento"> 
                 <div class="consumo-resultados">
                     <div class="consumo-resultados-header">
                         Resultados
@@ -242,7 +241,285 @@
                 </div>
             </div>
         </div>
-        <div class="panel-calculations-container hide">
+        <div class="element-boxes hide">
+            <div class="element panel-solar-element">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/panel-solar-verde-gris.png" alt="">
+                <span class="element-title">Panel Solar (W)</span>
+                <div class="panel-sugerido">
+                    <span class="detail">Sugerida</span> 
+                    <span class="number">&nbsp;</span> 
+                </div>
+                <div class="panel-seleccionado">
+                    <span class="detail">Seleccionada</span> 
+                    <input type="number" min="0" max="1000" step="5" class="number" disabled>
+                </div>
+            </div>
+            <div class="element bateria-auxiliar-element hide-mobile">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/bateria-verde-gris.png" alt="">
+                <span class="element-title">Bateria Auxiliar (Ah)</span>
+                <div class="bateria-sugerida">
+                    <span class="detail">Sugerida</span> 
+                    <span class="number">&nbsp;</span> 
+                </div>
+                <div class="bateria-seleccionada">
+                    <span class="detail">Seleccionada</span> 
+                    <input type="number" min="0" max="1000" step="5" class="number" disabled>
+                </div>
+            </div>
+            <div class="element regulador-element hide-mobile">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/regulador-verde-gris.png" alt="">
+                <span class="element-title">Regulador Solar (A)</span>
+                <span class="element-number">&nbsp;</span>
+            </div>
+            <div class="element booster-element hide-mobile">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/booster-verde-gris.png" alt="">
+                <span class="element-title">Booster (A)</span>
+                <span class="element-number">&nbsp;</span>
+            </div>
+            <div class="element inversor-element hide-mobile">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/inversor-verde-gris.png" alt="">
+                <span class="element-title">Inversor (W)</span>
+                <span class="element-number">&nbsp;</span>
+            </div>
+            <div class="element cargador-element hide-mobile">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/cargador-verde-gris.png" alt="">
+                <span class="element-title">Cargador de Batería (A)</span>
+                <span class="element-number">&nbsp;</span>
+            </div>
+        </div>
+        <div class="mobile-navigation hide">
+            <div class="navigation-circle panel-solar-circle filled"></div>
+            <div class="navigation-circle bateria-circle"></div>
+            <div class="navigation-circle regulador-circle"></div>
+            <div class="navigation-circle booster-circle"></div>
+            <div class="navigation-circle inversor-circle"></div>
+            <div class="navigation-circle cargador-circle"></div>
+        </div>
+        <div class="activity-box panel-solar-box hide">
+            <div class="control-box">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/panel-solar-verde-blanco.png" alt="">
+                <h3>¿DESEA INSTALAR UN PANEL SOLAR?</h3>
+                <div class="fila-bateria">
+                    <div class="medida">
+                        <div class="seleccionar-medida-bateria panel-solar-pregunta">
+                            <span class="medida medida-buscador new-panel-yes selected">Si</span>
+                            <span class="medida medida-buscador new-panel-no">No</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-box">
+                <div class="navigation-button panel-previous" style="display: none;">
+                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="">
+                    <span>Anterior</span>
+                </div>
+                <div class="navigation-button panel-next">
+                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="">
+                    <span>Siguiente</span>
+                </div>
+            </div>
+            <div class="result-box panel-solar-result-box">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/panel-solar-verde-blanco.png" alt="">
+                <h3>PANEL SOLAR</h3>
+                <div class="summary-row default">
+                    <span class="title">Consumos Totales (Wh)</span>
+                    <span class="detail new-panel-consumo-total">&nbsp;</span>
+                </div>
+                <div class="summary-row gray">
+                    <span class="title">Potencia mínima del panel solar  (W)</span>
+                    <span class="detail new-panel-potencia-minima">&nbsp;</span>
+                </div>
+                <div class="summary-row green">
+                    <span class="title"> Potencia del panel solar elegido (W)</span>
+                    <input type="number" max="1000" min="0" step="5" class="new-panel-potencia-seccionada" onchange="updateDatosPanelFromBottom()">
+                </div>
+                <div>
+                    <span class="blue-note">La potencia mínima recomendada la podrá instalar con uno o más paneles</span>
+                </div>
+            </div>
+        </div>
+        <div class="activity-box bateria-box hide">
+            <div class="control-box">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/bateria-verde-blanco.png" alt="">
+                <h3>BATERÍA AUXILIAR</h3>
+                <h4>Elija una opción del tipo de batería</h4>
+                <div class="fila-bateria">
+                    <div class="medida">
+                        <div class="seleccionar-medida-bateria bateria-pregunta">
+                            <span class="medida medida-buscador new-bateria-life selected">LiFePO4</span>
+                            <span class="medida medida-buscador new-bateria-gel">GEL/AGM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-box">
+                <div class="navigation-button bateria-previous">
+                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="">
+                    <span>Anterior</span>
+                </div>
+                <div class="navigation-button bateria-next">
+                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="">
+                    <span>Siguiente</span>
+                </div>
+            </div>
+            <div class="result-box bateria-result-box">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/bateria-verde-blanco.png" alt="">
+                <h3>BATERÍA AUXILIAR</h3>
+                <div class="summary-row default">
+                    <span class="title">Consumos totales (W)</span>
+                    <span class="detail new-bateria-total-consumos">&nbsp;</span>
+                </div>
+                <div class="summary-row default hide-at-solar-no">
+                    <span class="title">Potencia del panel solar elegido (W)</span>
+                    <span class="detail new-bateria-panel-seleccionado">&nbsp;</span>
+                </div>
+                <div class="summary-row default">
+                    <span class="title">Número de días de autonomía</span>
+                    <input type="number" max="30" min="1" step="1" value="1" class="new-bateria-dias-autonomia" onchange="calcularBateria()">
+                </div>
+                <div class="summary-row green">
+                    <span class="title">Cálculo de batería mínima (Ah)</span>
+                    <span class="number new-bateria-minima">&nbsp;</span>
+                </div>
+                <div class="summary-row dark-green">
+                    <span class="title">Batería seleccionada (Ah)</span>
+                    <input type="number" max="1000" min="0" step="5" class="new-bateria-seleccionada" onchange="updateDatosBateriaFromBottom()">
+                </div>
+                <span class="blue-note">Lo normal es calcular la instalación con 2 a 3 días de autonomía.</span>
+            </div>
+        </div>
+        <div class="activity-box regulador-box hide">
+            <div class="result-box regulador-result-box">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/regulador-verde-blanco.png" alt="">
+                <h3>REGULADOR SOLAR</h3>
+                <h4>&nbsp;</h4>
+                <div class="summary-row default">
+                    <span class="title">Potencia del panel solar elegido (W)</span>
+                    <span class="detail new-regulador-potencia">&nbsp;</span>
+                </div>
+                <div class="summary-row green">
+                    <span class="title">Regulador solar mínimo a instalar (A)</span>
+                    <span class="detail new-regulador-value">&nbsp;</span>
+                </div>
+            </div>
+            <div class="navigation-box">
+                <div class="navigation-button regulador-previous">
+                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="">
+                    <span>Anterior</span>
+                </div>
+                <div class="navigation-button regulador-next">
+                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="">
+                    <span>Siguiente</span>
+                </div>
+            </div>
+        </div>
+        <div class="activity-box booster-box hide">
+            <div class="control-box">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/booster-verde-blanco.png" alt="">
+                <h3>¿VAS A CONECTAR LAS BATERÍAS PRINCIPAL Y SECUNDARIA?</h3>
+                <div class="fila-bateria">
+                    <div class="medida">
+                        <div class="seleccionar-medida-bateria booster-pregunta">
+                            <span class="medida medida-buscador new-booster-yes selected">Si</span>
+                            <span class="medida medida-buscador new-booster-no">No</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-box">
+                <div class="navigation-button booster-previous">
+                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="">
+                    <span>Anterior</span>
+                </div>
+                <div class="navigation-button booster-next">
+                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="">
+                    <span>Siguiente</span>
+                </div>
+            </div>
+            <div class="result-box booster-result-box">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/booster-verde-blanco.png" alt="">
+                <h3>BOOSTER</h3>
+                <div class="summary-row default">
+                    <span class="title">Capacidad de batería elegida (Ah)</span>
+                    <span class="detail new-booster-capacidad-bateria">&nbsp;</span>
+                </div>
+                <div class="summary-row green">
+                    <span class="title">Booster mínimo a instalar (A)</span>
+                    <span class="detail new-booster-value">&nbsp;</span>
+                </div>
+            </div>
+        </div>
+        <div class="activity-box inversor-box hide">
+            <div class="control-box">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/inversor-verde-blanco.png" alt="">
+                <h3>¿VAS A INSTALAR UN INVERSOR?</h3>
+                <div class="fila-bateria">
+                    <div class="medida">
+                        <div class="seleccionar-medida-bateria inversor-pregunta">
+                            <span class="medida medida-buscador new-inversor-yes selected">Si</span>
+                            <span class="medida medida-buscador new-inversor-no">No</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-box">
+                <div class="navigation-button inversor-previous">
+                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="">
+                    <span>Anterior</span>
+                </div>
+                <div class="navigation-button inversor-next">
+                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="">
+                    <span>Siguiente</span>
+                </div>
+            </div>
+            <div class="result-box inversor-result-box">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/inversor-verde-blanco.png" alt="">
+                <h3>INVERSOR</h3>
+                <div class="summary-row green">
+                    <span class="title">Potencia mínima del inversor a instalar (W)</span>
+                    <span class="detail new-inversor-value">&nbsp;</span>
+                </div>
+            </div>
+        </div>
+        <div class="activity-box cargador-box hide">
+            <div class="control-box">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/cargador-verde-blanco.png" alt="">
+                <h3>¿VAS A INSTALAR UN CARGADOR DE BATERÍAS?</h3>
+                <div class="fila-bateria">
+                    <div class="medida">
+                        <div class="seleccionar-medida-bateria cargador-pregunta">
+                            <span class="medida medida-buscador new-cargador-yes selected">Si</span>
+                            <span class="medida medida-buscador new-cargador-no">No</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-box">
+                <div class="navigation-button cargador-previous">
+                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="">
+                    <span>Anterior</span>
+                </div>
+                <div class="navigation-button cargador-next" style="display: none;">
+                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="">
+                    <span>Siguiente</span>
+                </div>
+            </div>
+            <div class="result-box cargador-result-box">
+                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/cargador-verde-blanco.png" alt="">
+                <h3>CARGADOR DE BATERÍAS</h3>
+                <div class="summary-row default">
+                    <span class="title">Capacidad de batería elegida (Ah)</span>
+                    <span class="detail new-cargador-capacidad-bateria-value">&nbsp;</span>
+                </div>
+                <div class="summary-row green">
+                    <span class="title">Cargador de batería mínimo (A)</span>
+                    <span class="detail new-cargador-value">&nbsp;</span>
+                </div>
+            </div>
+        </div>
+        <div class="panel-calculations-container hide" style="display: none!important;">
+
+            
 
 
             <h2 class="calculadora-toggle-header">
@@ -489,7 +766,36 @@
                 </div>
             </div>
         </div>
+        <div class="faq-section">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="accordion-faq">
+                <div class="accordion-faq-item">
+                    <h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">
+                        FAQ 1? <span>+</span>
+                    </h2>
+                    <div class="accordion-faq-content">
+                        <p>Lorem fistrum a wan condemor quietooor a wan ahorarr condemor pecador a gramenawer te va a hasé pupitaa. Jarl hasta luego Lucas quietooor de la pradera diodeno no te digo trigo por no llamarte Rodrigor apetecan condemor. Condemor te va a hasé pupitaa ahorarr la caidita no te digo trigo por no llamarte Rodrigor pecador a peich papaar papaar. Condemor caballo blanco caballo negroorl diodenoo a gramenawer pupita está la cosa muy malar me cago en tus muelas papaar papaar apetecan torpedo jarl. Te voy a borrar el cerito hasta luego Lucas a wan no te digo trigo por no llamarte Rodrigor sexuarl. Tiene musho peligro torpedo jarl está la cosa muy malar te voy a borrar el cerito llevame al sircoo a peich. Benemeritaar a wan no puedor apetecan a peich a peich. De la pradera quietooor ese pedazo de está la cosa muy malar diodeno.</p>
+                    </div>
+                </div>
+                <div class="accordion-faq-item">
+                    <h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">
+                        FAQ 2? <span>+</span>
+                    </h2>
+                    <div class="accordion-faq-content">
+                        <p>Pecador caballo blanco caballo negroorl ese hombree la caidita la caidita tiene musho peligro apetecan torpedo. Fistro la caidita no puedor al ataquerl torpedo condemor ese pedazo de. Benemeritaar a peich torpedo no puedor va usté muy cargadoo la caidita.</p>
+                    </div>
+                </div>
+                <div class="accordion-faq-item">
+                    <h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">
+                        FAQ 3? <span>+</span>
+                    </h2>
+                    <div class="accordion-faq-content">
+                        <p>Quietooor a peich por la gloria de mi madre pupita apetecan. Papaar papaar ese pedazo de quietooor no te digo trigo por no llamarte Rodrigor sexuarl. Diodeno te voy a borrar el cerito hasta luego Lucas te va a hasé pupitaa de la pradera jarl pecador la caidita. Me cago en tus muelas te va a hasé pupitaa mamaar llevame al sircoo diodenoo qué dise usteer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div> <!-- Contenedor principal -->
 </body>
-
+    
 </html>

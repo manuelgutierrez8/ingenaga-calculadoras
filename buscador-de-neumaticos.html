@@ -17,139 +17,123 @@
 
 <body>
     <div class="equivalencia-content">
-        <h2>Buscador de Neumáticos</h2>
-        <p>
-            En este buscador encontrarás diferentes opciones de neumáticos para tu vehículo
-            <br>
-        <ul>
-            <li>Comprueba si son equivalentes a los originales.</li>
-            <li>Descubre si necesitas homologarlos.</li>
-            <li>Verifica si la homologación requiere prueba de laboratorio.</li>
+<h2>Buscador de Neumáticos</h2>
+En este buscador encontrarás diferentes opciones de neumáticos para tu vehículo
+<ul>
+ 	<li>Comprueba si son equivalentes a los originales.</li>
+ 	<li>Descubre si necesitas homologarlos.</li>
+ 	<li>Verifica si la homologación requiere prueba de laboratorio.</li>
+</ul>
+Ingresa los siguientes datos:
+<div class="accordion-item"><button class="accordion-header" type="button">Sigue estos sencillos pasos: <span class="icon">+</span></button>
+<div class="accordion-body">
+<ul>
+ 	<li>Introduce la medida de neumático que tienes en ficha técnica.</li>
+ 	<li>Elige la medida de llanta que te gustaría instalar.</li>
+ 	<li>Elige la variación de diámetro dependiendo de lo que busques:</li>
+</ul>
+<ol>
+ 	<li>Hasta el 3% (Neumáticos equivalentes no hay que homologar)</li>
+ 	<li>Del 3 al 10% (Neumáticos que llevan homologación sin prueba de laboratorio)</li>
+ 	<li>Más del 10% (Neumáticos se tienen que homologar y llevan prueba de laboratorio)</li>
+</ol>
+</div>
+</div>
+<b>¡Empieza a buscar ahora!</b>
+<div class="buscar-neumaticos operaciones"><img class="imagen-ayuda-buscar" src="https://www.ingenaga.com/wp-content/uploads/2024/05/ancho-neumatico-min.jpg" alt="" />
+<div class="ficha-tecnica operador">
+<div class="fila-superior">
+<h3 class="titulo">Ficha técnica</h3>
+<div class="medida">Medida
+<div class="seleccionar-medida"><span class="medida medida-buscador medida-americana">Americana</span>
+<span class="medida medida-buscador medida-mm selected">Europea</span></div>
+</div>
+</div>
+<div class="controles">
+<div class="ancho control">Ancho
+<select id="buscador-ancho" class="labeled-dropdown" name="buscador-ancho"></select></div>
+<div class="perfil control">Perfil
+<select id="buscador-perfil" class="labeled-dropdown" name="buscador-perfil"></select></div>
+<div class="radio control">Radio
+<select id="buscador-radio" class="labeled-dropdown" name="buscador-radio"></select></div>
+</div>
+</div>
+<!-- Operador -->
+<div class="nueva-medida-neumatico operador">
+<div class="fila-superior">
+<h3 class="titulo">Nueva medida de llanta</h3>
+</div>
+<div class="controles">
+<div class="radio control">
+<div class="radio-control-container">Radio<select id="nuevo-buscador-radio" class="labeled-dropdown" name="nuevo-buscador-radio"></select></div>
+</div>
+<div class="diferencia-diametro">
+<div>
 
-        </ul>
-        </p>
-        <p>
-            Ingresa los siguientes datos:
-            <div class="accordion-item">
-                <button class="accordion-header" type="button">Sigue estos sencillos pasos: <span class="icon">+</span></button>
-                <div class="accordion-body">
-                    <ul>
-                        <li>Introduce la medida de neumático que tienes en ficha técnica.</li>
-                        <li>Elige la medida de llanta que te gustaría instalar.</li>
-                        <li>Elige la variación de diámetro dependiendo de lo que busques:</li>
-                    </ul>
-                    <ol>
-                        <li>Hasta el 3% (Neumáticos equivalentes no hay que homologar)</li>
-                        <li>Del 3 al 10% (Neumáticos que llevan homologación sin prueba de laboratorio)</li>
-                        <li>Más del 10% (Neumáticos se tienen que homologar y llevan prueba de laboratorio)</li>
-                    </ol>
-                </div>
-            </div>
-            <b>¡Empieza a buscar ahora!</b>
-        </p>
-        <div class="buscar-neumaticos operaciones">
-            <img src="https://www.ingenaga.com/wp-content/uploads/2024/05/ancho-neumatico-min.jpg" alt=""
-                class="imagen-ayuda-buscar">
-            <div class="ficha-tecnica operador">
-                <div class="fila-superior">
-                    <h3 class="titulo">Ficha técnica</h3>
-                    <div class="medida">
-                        <span>Medida</span>
-                        <div class="seleccionar-medida">
-                            <span class="medida medida-buscador medida-americana">Americana</span>
-                            <span class="medida medida-buscador medida-mm selected">Europea</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="controles">
-                    <div class="ancho control">
-                        <span>Ancho</span>
-                        <select name="buscador-ancho" id="buscador-ancho" class="labeled-dropdown"></select>
-                    </div>
-                    <div class="perfil control">
-                        <span>Perfil</span>
-                        <select name="buscador-perfil" id="buscador-perfil" class="labeled-dropdown"></select>
-                    </div>
-                    <div class="radio control">
-                        <span>Radio</span>
-                        <select name="buscador-radio" id="buscador-radio" class="labeled-dropdown"></select>
-                    </div>
-                </div>
-            </div> <!-- Operador -->
-            <div class="nueva-medida-neumatico operador">
-                <div class="fila-superior">
-                    <h3 class="titulo">Nueva medida de llanta</h3>
-                </div>
-                <div class="controles">
-                    <div class="radio control">
-                        <div class="radio-control-container"><span>Radio</span><select name="nuevo-buscador-radio" id="nuevo-buscador-radio" class="labeled-dropdown"></select></div>
-                    </div>
-                    <div class="diferencia-diametro">
-                        <div>
-                            <p>
-                                <b>Diferencia de diámetro</b><br><b style="color:#008B8F;">Elija una opción</b>
-                            </p>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="radio3porciento" name="porcentajeBusqueda" value="3%" checked><label for="radio3porciento"><span>Hasta el 3%</span><br><small>(Neumáticos equivalentes no hay que homologar)</small></label>
-                        </div>
-                        <div class="radio-option"><input type="radio" id="radio3al10porciento" name="porcentajeBusqueda" value="3%-10%"><label for="radio3al10porciento"><span>Del 3% al 10%</span><br><small>(Neumáticos que llevan homologación sin prueba de laboratorio)</small></label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="radio10porciento" name="porcentajeBusqueda" value="10%"><label for="radio10porciento"><span>Más del 10%</span><br><small>(Neumáticos se tienen que homologar y llevan prueba de laboratorio)</small></label>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- Operador -->
-            <img src="https://www.ingenaga.com/wp-content/uploads/2024/12/buscar.png" alt="" class="boton-buscar custom-button">
-            <!-- <button class="boton-buscar custom-button">Buscar</button> -->
-            <div class="resultados-busqueda-contenedor hide">
-                <p style="text-align: center; font-size: 18px; font-weight: bold;">
-                    Los siguientes neumáticos se encuentran dentro del rango elegido con respecto a la medida original.
-                    <br>
-                    <span class="replace-modelo"></span>
-                    <span class="replace-busqueda"></span>
-                </p>
-                <div class="neumaticos-resultados">
-                </div>
-            </div>
-            <div class="resultados-busqueda-contenedor-empty hide">
-                <h3 style="color:#e30613;text-align: center;">No hay resultados</h3>
-            </div>
-            <div class="not-db-buscar hide">
-                <p class="not-db-buscar-text">[mensaje]</p>
-            </div>
-        </div>
-        <div class="faq-section">
-            <h2>Preguntas Frecuentes</h2>
-            <div class="accordion-faq">
-                <div class="accordion-faq-item">
-                    <h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">
-                        FAQ 1? <span>+</span>
-                    </h2>
-                    <div class="accordion-faq-content">
-                        <p>Lorem fistrum a wan condemor quietooor a wan ahorarr condemor pecador a gramenawer te va a hasé pupitaa. Jarl hasta luego Lucas quietooor de la pradera diodeno no te digo trigo por no llamarte Rodrigor apetecan condemor. Condemor te va a hasé pupitaa ahorarr la caidita no te digo trigo por no llamarte Rodrigor pecador a peich papaar papaar. Condemor caballo blanco caballo negroorl diodenoo a gramenawer pupita está la cosa muy malar me cago en tus muelas papaar papaar apetecan torpedo jarl. Te voy a borrar el cerito hasta luego Lucas a wan no te digo trigo por no llamarte Rodrigor sexuarl. Tiene musho peligro torpedo jarl está la cosa muy malar te voy a borrar el cerito llevame al sircoo a peich. Benemeritaar a wan no puedor apetecan a peich a peich. De la pradera quietooor ese pedazo de está la cosa muy malar diodeno.</p>
-                    </div>
-                </div>
-                <div class="accordion-faq-item">
-                    <h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">
-                        FAQ 2? <span>+</span>
-                    </h2>
-                    <div class="accordion-faq-content">
-                        <p>Pecador caballo blanco caballo negroorl ese hombree la caidita la caidita tiene musho peligro apetecan torpedo. Fistro la caidita no puedor al ataquerl torpedo condemor ese pedazo de. Benemeritaar a peich torpedo no puedor va usté muy cargadoo la caidita.</p>
-                    </div>
-                </div>
-                <div class="accordion-faq-item">
-                    <h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">
-                        FAQ 3? <span>+</span>
-                    </h2>
-                    <div class="accordion-faq-content">
-                        <p>Quietooor a peich por la gloria de mi madre pupita apetecan. Papaar papaar ese pedazo de quietooor no te digo trigo por no llamarte Rodrigor sexuarl. Diodeno te voy a borrar el cerito hasta luego Lucas te va a hasé pupitaa de la pradera jarl pecador la caidita. Me cago en tus muelas te va a hasé pupitaa mamaar llevame al sircoo diodenoo qué dise usteer.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- Contenedor principal -->
+<b>Diferencia de diámetro</b>
+<b style="color: #008b8f;">Elija una opción</b>
+
+</div>
+<div class="radio-option"><input id="radio3porciento" checked="checked" name="porcentajeBusqueda" type="radio" value="3%" /><label for="radio3porciento">Hasta el 3%
+<small>(Neumáticos equivalentes no hay que homologar)</small></label></div>
+<div class="radio-option"><input id="radio3al10porciento" name="porcentajeBusqueda" type="radio" value="3%-10%" /><label for="radio3al10porciento">Del 3% al 10%
+<small>(Neumáticos que llevan homologación sin prueba de laboratorio)</small></label></div>
+<div class="radio-option"><input id="radio10porciento" name="porcentajeBusqueda" type="radio" value="10%" /><label for="radio10porciento">Más del 10%
+<small>(Neumáticos se tienen que homologar y llevan prueba de laboratorio)</small></label></div>
+</div>
+</div>
+</div>
+<!-- Operador -->
+<img class="boton-buscar custom-button" src="https://www.ingenaga.com/wp-content/uploads/2024/12/buscar.png" alt="" />
+<!-- <button class="boton-buscar custom-button">Buscar</button> -->
+<div class="resultados-busqueda-contenedor hide">
+<p style="text-align: center; font-size: 18px; font-weight: bold;">Los siguientes neumáticos se encuentran dentro del rango elegido con respecto a la medida original.
+
+
+</p>
+
+<div class="neumaticos-resultados"></div>
+</div>
+<div class="resultados-busqueda-contenedor-empty hide">
+<h3 style="color: #e30613; text-align: center;">No hay resultados</h3>
+</div>
+<div class="not-db-buscar hide">
+<p class="not-db-buscar-text">[mensaje]</p>
+
+</div>
+</div>
+<div class="faq-section">
+<h2>Preguntas Frecuentes</h2>
+<div class="accordion-faq">
+<div class="accordion-faq-item">
+<h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">¿Por qué usar un comparador de precios de neumáticos? <span>+</span></h2>
+<div class="accordion-faq-content">
+
+Cuando tienes que comprar neumáticos nuevos, lo más probable es que te dirijas a la tienda más cercana o a tu concesionario habitual, y a veces hasta te pasas el día de taller en taller. Además, te pones a comparar neumáticos en unas cuantas páginas web. Pero con tantas opciones, ¿cómo eliges la mejor sin perderte en el proceso? ¡La solución es simple! Un comparador de precios de neumáticos te ayudará a encontrar las mejores ofertas de manera rápida y sin estrés.
+
+
+</div>
+</div>
+<div class="accordion-faq-item">
+<h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">Las ventajas de usar un comparador de precios de neumáticos <span>+</span></h2>
+<div class="accordion-faq-content">
+
+Comprar neumáticos con un comparador de precios te hace ahorrar tiempo y dinero. Desde ahora, ya no tendrás que andar buscando por todos lados. Tienes todas las ofertas de neumáticos online en una sola página: neumáticos para todas las estaciones, de invierno, de verano, ¡y más! Con miles de referencias de neumáticos nuevos, seguro encontrarás el que mejor se adapte a ti.
+
+</div>
+</div>
+<div class="accordion-faq-item">
+<h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">¿Cuáles son las mejores marcas de neumáticos para coches online? <span>+</span></h2>
+<div class="accordion-faq-content">
+
+Las marcas de neumáticos no son todas iguales. Encontrar el neumático de tus sueños resulta bastante difícil porque ni siquiera sabes que marca elegir. Sin embargo, los resultados de pruebas independientes permiten elegir una marca de neumáticos con los ojos cerrados. Examinamos cuidadosamente y sintetizamos para ti varios criterios de estas pruebas, incluyendo el frenado en seco y mojado, la tracción, la distancia de parada, el consumo de combustible y la capacidad de maniobra. Aunque los fabricantes de marcas de neumáticos premium (neumáticos Michelin, Continental, Pirelli, Goodyear, Dunlop y Hankook) diseñan neumáticos de calidad testada, otras marcas menos conocidas también proponen una excelente relación calidad-precio.
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Contenedor principal -->
 </body>
     
 </html>

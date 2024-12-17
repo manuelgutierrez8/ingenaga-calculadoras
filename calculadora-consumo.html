@@ -17,785 +17,633 @@
 
 <body>
     <div class="calculadora-consumo">
-        <h2 class="calculadora-toggle-header">
-            <span class="icon">▼</span>Instrucciones para el uso de la calculadora de consumos
-        </h2>
-        <div class="calculadora-toggle-content">
-            <p>Con esta herramienta podrás calcular tus consumos diarios que te ayudarán a dimensionar tu instalación
-                eléctrica.</p>
-            <p>Como algunas veces se hace difícil saber las potencias de las cosas que quieres poner te ayudamos con una
-                lista de las potencias que suelen tener los elementos eléctricos más usados en un camper:</p>
-            <div class="demo-table-container">
-                <table class="referencia-potencia-table">
-                    <thead>
-                        <tr>
-                            <th colspan=2>TABLA DE REFERENCIA PARA POTENCIAS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tira led</td>
-                            <td>5-10W por metro</td>
-                        </tr>
-                        <tr>
-                            <td>Puntos de luz plafones</td>
-                            <td>5W</td>
-                        </tr>
-                        <tr>
-                            <td>Flexo lectura</td>
-                            <td>5W</td>
-                        </tr>
-                        <tr>
-                            <td>Ventilador claraboya</td>
-                            <td>25W</td>
-                        </tr>
-                        <tr>
-                            <td>Calentador agua</td>
-                            <td>200W</td>
-                        </tr>
-                        <tr>
-                            <td>Calefacción 2KW</td>
-                            <td>25W</td>
-                        </tr>
-                        <tr>
-                            <td>Calefacción 4KW</td>
-                            <td>45W</td>
-                        </tr>
-                        <tr>
-                            <td>Extractor baño</td>
-                            <td>5 - 7W</td>
-                        </tr>
-                        <tr>
-                            <td>Bomba de agua sumergible</td>
-                            <td>20W</td>
-                        </tr>
-                        <tr>
-                            <td>Bomba de agua de presión</td>
-                            <td>48W</td>
-                        </tr>
-                        <tr>
-                            <td>Inversor 1000W</td>
-                            <td>10-20W</td>
-                        </tr>
-                        <tr>
-                            <td>Inversor 2000W</td>
-                            <td>20-40W</td>
-                        </tr>
-                        <tr>
-                            <td>TV</td>
-                            <td>65W</td>
-                        </tr>
-                        <tr>
-                            <td>Cargador de portatil</td>
-                            <td>65W</td>
-                        </tr>
-                        <tr>
-                            <td>Cargador de movil</td>
-                            <td>20W</td>
-                        </tr>
-                        <tr class="last-row">
-                            <td>Nevera</td>
-                            <td>60W - 72W</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p>Es muy importante que todo lo que elijas sea eficiente energéticamente hablando, pero sobre todo la
-                nevera, ya que, suele ser uno de los mayores consumos diarios que hay en las camper.</p>
-            <p>Las neveras eficientes suelen tener un consumo diario de entre 190Wh y 250Wh, ya que aunque la nevera
-                esté conectada 24 horas su compresor no está funcionando las 24 horas. De media suele trabajar de 6 a 8
-                horas dependiendo del calor que haga fuera, y de la temperatura que pongamos interna de la nevera.</p>
-            <p>En cuanto al inversor, lo que hay que poner en la tabla no es la potencia que ofrece a 230V, ya que vas a
-                calcular los consumos reales, es el consumo que tiene el simple hecho de estar encendido.</p>
-            <p>Las calefacciones estacionarias tienen un consumo eléctrico, aunque vayan a gasoil, que hay que tener en
-                cuenta y es el que proponemos en la tabla de referencia.</p>
-        </div>
+<h1 class="calculadora-toggle-header"><span class="icon">▼</span>Instrucciones para el uso de la calculadora de consumos energético camper</h1>
+<div class="calculadora-toggle-content">
 
-        <h2 class="calculadora-toggle-header2">
-            <span class="icon">▼</span>¿Cómo calculo la potencia si en las placas de especificaciones me da una
-            intensidad en Amperios?
-        </h2>
-        <div class="calculadora-toggle-content2">
-            <p>Por ejemplo, podemos ver que una bomba de agua de 12V nos dice que consume 5 Amperios mientras se usa.
-                Para sacar la potencia tendrías que multiplicar:</p>
-            <p>Voltaje x Amperios = Potencia<br>5 amperios x 12 Voltios = 60 Watios</p>
-        </div>
-        <h2 class="calculadora-toggle-header">
-            <span class="icon" style="visibility:hidden;">▼</span>calculadora de consumos
-        </h2>
-        <div class="calculadora-operations-container">
-            <div class="consumo-operations">
-                <div class="consumo-table-header">
-                    <div style="width: 30%;">Elemento</div>
-                    <div style="width: 15%;">Potencia<br><span>(Watios)</span></div>
-                    <div style="width: 15%;">Tensión<br><span>(Voltios)</span></div>
-                    <div style="width: 20%;">Tiempo de <br> uso/día</div>
-                    <div style="width: 20%;">Unidades</div>
-                </div>
-                <div class="consumo-table-body">
-                    <div class="consumo-table-row-demo hide">
-                        <div style="width: 30%;" class="consumo-elemento">
-                            <!-- <input list="consumo-options" class="consumo-elemento" id="autocomplete-input"
-                                placeholder="Selecciona o escriba el elemento aquí"> -->
-                            <select id="consumo-options">
-                                <option value="Iluminación tira de LED">Iluminación tira de LED</option>
-                                <option value="Puntos de luz (plafones)">Puntos de luz (plafones)</option>
-                                <option value="Flexos lectura">Flexos lectura</option>
-                                <option value="Calefacción estacionaria">Calefacción estacionaria</option>
-                                <option value="Extractores">Extractores</option>
-                                <option value="Ventilador claraboya">Ventilador claraboya</option>
-                                <option value="Bomba de agua sumergible">Bomba de agua sumergible</option>
-                                <option value="Bomba agua presión">Bomba agua presión</option>
-                                <option value="Calentador de agua">Calentador de agua</option>
-                                <option value="Cargador de baterías">Cargador de baterías</option>
-                                <option value="Cargador ordenador portátil 12V">Cargador ordenador portátil 12V</option>
-                                <option value="Cargador ordenador portátil 230V 65W">Cargador ordenador portátil 230V
-                                    65W</option>
-                                <option value="Otro">Otro</option>
-                            </select>
-                        </div>
-                        <div style="width: 15%;" class="consumo-potencia">
-                            <input type="number" name="option-watts" class="option-watts" min="0" max="1200" step="5"
-                                value="10" />
-                        </div>
-                        <div style="width: 15%;">
-                            <select name="options-voltios" class="option-voltios" id="">
-                                <option value="12">12 V</option>
-                                <option value="230">230 V</option>
-                            </select>
-                        </div>
-                        <div style="width: 20%;">
-                            <select name="options-tiempo" class="option-tiempo" id="">
-                                <option value="0.08">5 min</option>
-                                <option value="0.16">10 min</option>
-                                <option value="0.25">15 min</option>
-                                <option value="0.5">30 min</option>
-                                <option value="0.75">45 min</option>
-                                <option value="1" selected>1 hora</option>
-                                <option value="1.5">1.5 horas</option>
-                                <option value="2">2 horas</option>
-                                <option value="3">3 horas</option>
-                                <option value="4">4 horas</option>
-                                <option value="5">5 horas</option>
-                                <option value="6">6 horas</option>
-                                <option value="7">7 horas</option>
-                                <option value="8">8 horas</option>
-                                <option value="9">9 horas</option>
-                                <option value="10">10 horas</option>
-                                <option value="11">11 horas</option>
-                                <option value="12">12 horas</option>
-                                <option value="13">13 horas</option>
-                                <option value="14">14 horas</option>
-                                <option value="15">15 horas</option>
-                            </select>
-                        </div>
-                        <div style="width: 20%; display: flex;flex-direction: column;">
-                            <!-- <input type="number" name="options-unidades" class="option-unidades" min="0" max="20" step="1"
-                                value="1" style="width: 75%;"/> -->
-                            <select name="option-unidades" class="option-unidades" style="width: 75%;" id="">
-                                <option value="1" selected></option>
-                                <option value="2"></option>
-                                <option value="3"></option>
-                                <option value="4"></option>
-                                <option value="5"></option>
-                                <option value="6"></option>
-                                <option value="7"></option>
-                                <option value="8"></option>
-                                <option value="9"></option>
-                                <option value="10"></option>
-                                <option value="11"></option>
-                                <option value="12"></option>
-                                <option value="13"></option>
-                                <option value="14"></option>
-                                <option value="15"></option>
-                                <option value="16"></option>
-                                <option value="17"></option>
-                                <option value="18"></option>
-                                <option value="19"></option>
-                                <option value="20"></option>
-                            </select>
-                            <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/trash.png"
-                                onclick="deleteButtonClick(event)" width="32px" height="40px" alt=""
-                                title="Eliminar elemento">
-                        </div>
-                    </div>
-                </div>
-                <!-- <button class="add-elemento"><span>⨁</span>&nbsp;<span>Agregar elemento</span></button> -->
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/add-element.png" alt="" width="200px" class="add-elemento"> 
-                <div class="consumo-resultados">
-                    <div class="consumo-resultados-header">
-                        Resultados
-                    </div>
-                    <div class="consumo-resultados-row">
-                        <span class="consumo-resultados-title">Suma de consumos a 12V</span>
-                        <span class="consumo-resultados-12-value">&nbsp;</span>
-                    </div>
-                    <div class="consumo-resultados-row">
-                        <span class="consumo-resultados-title">Suma de consumos a 230V</span>
-                        <span class="consumo-resultados-230-value">&nbsp;</span>
-                    </div>
-                    <div class="consumo-resultados-row">
-                        <span class="consumo-resultados-title">Suma de consumos totales</span>
-                        <span class="consumo-resultados-total-value">&nbsp;</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="element-boxes hide">
-            <div class="element panel-solar-element">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/panel-solar-verde-gris.png" alt="">
-                <span class="element-title">Panel Solar (W)</span>
-                <div class="panel-sugerido">
-                    <span class="detail">Sugerida</span> 
-                    <span class="number">&nbsp;</span> 
-                </div>
-                <div class="panel-seleccionado">
-                    <span class="detail">Seleccionada</span> 
-                    <input type="number" min="0" max="1000" step="5" class="number" disabled>
-                </div>
-            </div>
-            <div class="element bateria-auxiliar-element hide-mobile">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/bateria-verde-gris.png" alt="">
-                <span class="element-title">Bateria Auxiliar (Ah)</span>
-                <div class="bateria-sugerida">
-                    <span class="detail">Sugerida</span> 
-                    <span class="number">&nbsp;</span> 
-                </div>
-                <div class="bateria-seleccionada">
-                    <span class="detail">Seleccionada</span> 
-                    <input type="number" min="0" max="1000" step="5" class="number" disabled>
-                </div>
-            </div>
-            <div class="element regulador-element hide-mobile">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/regulador-verde-gris.png" alt="">
-                <span class="element-title">Regulador Solar (A)</span>
-                <span class="element-number">&nbsp;</span>
-            </div>
-            <div class="element booster-element hide-mobile">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/booster-verde-gris.png" alt="">
-                <span class="element-title">Booster (A)</span>
-                <span class="element-number">&nbsp;</span>
-            </div>
-            <div class="element inversor-element hide-mobile">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/inversor-verde-gris.png" alt="">
-                <span class="element-title">Inversor (W)</span>
-                <span class="element-number">&nbsp;</span>
-            </div>
-            <div class="element cargador-element hide-mobile">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/cargador-verde-gris.png" alt="">
-                <span class="element-title">Cargador de Batería (A)</span>
-                <span class="element-number">&nbsp;</span>
-            </div>
-        </div>
-        <div class="mobile-navigation hide">
-            <div class="navigation-circle panel-solar-circle filled"></div>
-            <div class="navigation-circle bateria-circle"></div>
-            <div class="navigation-circle regulador-circle"></div>
-            <div class="navigation-circle booster-circle"></div>
-            <div class="navigation-circle inversor-circle"></div>
-            <div class="navigation-circle cargador-circle"></div>
-        </div>
-        <div class="activity-box panel-solar-box hide">
-            <div class="control-box">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/panel-solar-verde-blanco.png" alt="">
-                <h3>¿DESEA INSTALAR UN PANEL SOLAR?</h3>
-                <div class="fila-bateria">
-                    <div class="medida">
-                        <div class="seleccionar-medida-bateria panel-solar-pregunta">
-                            <span class="medida medida-buscador new-panel-yes selected">Si</span>
-                            <span class="medida medida-buscador new-panel-no">No</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="navigation-box">
-                <div class="navigation-button panel-previous" style="display: none;">
-                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="">
-                    <span>Anterior</span>
-                </div>
-                <div class="navigation-button panel-next">
-                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="">
-                    <span>Siguiente</span>
-                </div>
-            </div>
-            <div class="result-box panel-solar-result-box">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/panel-solar-verde-blanco.png" alt="">
-                <h3>PANEL SOLAR</h3>
-                <div class="summary-row default">
-                    <span class="title">Consumos Totales (Wh)</span>
-                    <span class="detail new-panel-consumo-total">&nbsp;</span>
-                </div>
-                <div class="summary-row gray">
-                    <span class="title">Potencia mínima del panel solar  (W)</span>
-                    <span class="detail new-panel-potencia-minima">&nbsp;</span>
-                </div>
-                <div class="summary-row green">
-                    <span class="title"> Potencia del panel solar elegido (W)</span>
-                    <input type="number" max="1000" min="0" step="5" class="new-panel-potencia-seccionada" onchange="updateDatosPanelFromBottom()">
-                </div>
-                <div>
-                    <span class="blue-note">La potencia mínima recomendada la podrá instalar con uno o más paneles</span>
-                </div>
-            </div>
-        </div>
-        <div class="activity-box bateria-box hide">
-            <div class="control-box">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/bateria-verde-blanco.png" alt="">
-                <h3>BATERÍA AUXILIAR</h3>
-                <h4>Elija una opción del tipo de batería</h4>
-                <div class="fila-bateria">
-                    <div class="medida">
-                        <div class="seleccionar-medida-bateria bateria-pregunta">
-                            <span class="medida medida-buscador new-bateria-life selected">LiFePO4</span>
-                            <span class="medida medida-buscador new-bateria-gel">GEL/AGM</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="navigation-box">
-                <div class="navigation-button bateria-previous">
-                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="">
-                    <span>Anterior</span>
-                </div>
-                <div class="navigation-button bateria-next">
-                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="">
-                    <span>Siguiente</span>
-                </div>
-            </div>
-            <div class="result-box bateria-result-box">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/bateria-verde-blanco.png" alt="">
-                <h3>BATERÍA AUXILIAR</h3>
-                <div class="summary-row default">
-                    <span class="title">Consumos totales (W)</span>
-                    <span class="detail new-bateria-total-consumos">&nbsp;</span>
-                </div>
-                <div class="summary-row default hide-at-solar-no">
-                    <span class="title">Potencia del panel solar elegido (W)</span>
-                    <span class="detail new-bateria-panel-seleccionado">&nbsp;</span>
-                </div>
-                <div class="summary-row default">
-                    <span class="title">Número de días de autonomía</span>
-                    <input type="number" max="30" min="1" step="1" value="1" class="new-bateria-dias-autonomia" onchange="calcularBateria()">
-                </div>
-                <div class="summary-row green">
-                    <span class="title">Cálculo de batería mínima (Ah)</span>
-                    <span class="number new-bateria-minima">&nbsp;</span>
-                </div>
-                <div class="summary-row dark-green">
-                    <span class="title">Batería seleccionada (Ah)</span>
-                    <input type="number" max="1000" min="0" step="5" class="new-bateria-seleccionada" onchange="updateDatosBateriaFromBottom()">
-                </div>
-                <span class="blue-note">Lo normal es calcular la instalación con 2 a 3 días de autonomía.</span>
-            </div>
-        </div>
-        <div class="activity-box regulador-box hide">
-            <div class="result-box regulador-result-box">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/regulador-verde-blanco.png" alt="">
-                <h3>REGULADOR SOLAR</h3>
-                <h4>&nbsp;</h4>
-                <div class="summary-row default">
-                    <span class="title">Potencia del panel solar elegido (W)</span>
-                    <span class="detail new-regulador-potencia">&nbsp;</span>
-                </div>
-                <div class="summary-row green">
-                    <span class="title">Regulador solar mínimo a instalar (A)</span>
-                    <span class="detail new-regulador-value">&nbsp;</span>
-                </div>
-            </div>
-            <div class="navigation-box">
-                <div class="navigation-button regulador-previous">
-                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="">
-                    <span>Anterior</span>
-                </div>
-                <div class="navigation-button regulador-next">
-                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="">
-                    <span>Siguiente</span>
-                </div>
-            </div>
-        </div>
-        <div class="activity-box booster-box hide">
-            <div class="control-box">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/booster-verde-blanco.png" alt="">
-                <h3>¿VAS A CONECTAR LAS BATERÍAS PRINCIPAL Y SECUNDARIA?</h3>
-                <div class="fila-bateria">
-                    <div class="medida">
-                        <div class="seleccionar-medida-bateria booster-pregunta">
-                            <span class="medida medida-buscador new-booster-yes selected">Si</span>
-                            <span class="medida medida-buscador new-booster-no">No</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="navigation-box">
-                <div class="navigation-button booster-previous">
-                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="">
-                    <span>Anterior</span>
-                </div>
-                <div class="navigation-button booster-next">
-                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="">
-                    <span>Siguiente</span>
-                </div>
-            </div>
-            <div class="result-box booster-result-box">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/booster-verde-blanco.png" alt="">
-                <h3>BOOSTER</h3>
-                <div class="summary-row default">
-                    <span class="title">Capacidad de batería elegida (Ah)</span>
-                    <span class="detail new-booster-capacidad-bateria">&nbsp;</span>
-                </div>
-                <div class="summary-row green">
-                    <span class="title">Booster mínimo a instalar (A)</span>
-                    <span class="detail new-booster-value">&nbsp;</span>
-                </div>
-            </div>
-        </div>
-        <div class="activity-box inversor-box hide">
-            <div class="control-box">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/inversor-verde-blanco.png" alt="">
-                <h3>¿VAS A INSTALAR UN INVERSOR?</h3>
-                <div class="fila-bateria">
-                    <div class="medida">
-                        <div class="seleccionar-medida-bateria inversor-pregunta">
-                            <span class="medida medida-buscador new-inversor-yes selected">Si</span>
-                            <span class="medida medida-buscador new-inversor-no">No</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="navigation-box">
-                <div class="navigation-button inversor-previous">
-                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="">
-                    <span>Anterior</span>
-                </div>
-                <div class="navigation-button inversor-next">
-                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="">
-                    <span>Siguiente</span>
-                </div>
-            </div>
-            <div class="result-box inversor-result-box">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/inversor-verde-blanco.png" alt="">
-                <h3>INVERSOR</h3>
-                <div class="summary-row green">
-                    <span class="title">Potencia mínima del inversor a instalar (W)</span>
-                    <span class="detail new-inversor-value">&nbsp;</span>
-                </div>
-            </div>
-        </div>
-        <div class="activity-box cargador-box hide">
-            <div class="control-box">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/cargador-verde-blanco.png" alt="">
-                <h3>¿VAS A INSTALAR UN CARGADOR DE BATERÍAS?</h3>
-                <div class="fila-bateria">
-                    <div class="medida">
-                        <div class="seleccionar-medida-bateria cargador-pregunta">
-                            <span class="medida medida-buscador new-cargador-yes selected">Si</span>
-                            <span class="medida medida-buscador new-cargador-no">No</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="navigation-box">
-                <div class="navigation-button cargador-previous">
-                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="">
-                    <span>Anterior</span>
-                </div>
-                <div class="navigation-button cargador-next" style="display: none;">
-                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="">
-                    <span>Siguiente</span>
-                </div>
-            </div>
-            <div class="result-box cargador-result-box">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/11/cargador-verde-blanco.png" alt="">
-                <h3>CARGADOR DE BATERÍAS</h3>
-                <div class="summary-row default">
-                    <span class="title">Capacidad de batería elegida (Ah)</span>
-                    <span class="detail new-cargador-capacidad-bateria-value">&nbsp;</span>
-                </div>
-                <div class="summary-row green">
-                    <span class="title">Cargador de batería mínimo (A)</span>
-                    <span class="detail new-cargador-value">&nbsp;</span>
-                </div>
-            </div>
-        </div>
-        <div class="panel-calculations-container hide" style="display: none!important;">
+Con esta herramienta podrás calcular tus consumos diarios que te ayudarán a dimensionar tu instalación
+eléctrica.
 
-            
+Como algunas veces se hace difícil saber las potencias de las cosas que quieres poner te ayudamos con una
+lista de las potencias que suelen tener los elementos eléctricos más usados en un camper:
+<div class="demo-table-container">
+<table class="referencia-potencia-table">
+<thead>
+<tr>
+<th colspan="2">TABLA DE REFERENCIA PARA POTENCIAS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tira led</td>
+<td>5-10W por metro</td>
+</tr>
+<tr>
+<td>Puntos de luz plafones</td>
+<td>5W</td>
+</tr>
+<tr>
+<td>Flexo lectura</td>
+<td>5W</td>
+</tr>
+<tr>
+<td>Ventilador claraboya</td>
+<td>25W</td>
+</tr>
+<tr>
+<td>Calentador agua</td>
+<td>200W</td>
+</tr>
+<tr>
+<td>Calefacción 2KW</td>
+<td>25W</td>
+</tr>
+<tr>
+<td>Calefacción 4KW</td>
+<td>45W</td>
+</tr>
+<tr>
+<td>Extractor baño</td>
+<td>5 - 7W</td>
+</tr>
+<tr>
+<td>Bomba de agua sumergible</td>
+<td>20W</td>
+</tr>
+<tr>
+<td>Bomba de agua de presión</td>
+<td>48W</td>
+</tr>
+<tr>
+<td>Inversor 1000W</td>
+<td>10-20W</td>
+</tr>
+<tr>
+<td>Inversor 2000W</td>
+<td>20-40W</td>
+</tr>
+<tr>
+<td>TV</td>
+<td>65W</td>
+</tr>
+<tr>
+<td>Cargador de portatil</td>
+<td>65W</td>
+</tr>
+<tr>
+<td>Cargador de movil</td>
+<td>20W</td>
+</tr>
+<tr class="last-row">
+<td>Nevera</td>
+<td>60W - 72W</td>
+</tr>
+</tbody>
+</table>
+</div>
+Es muy importante que todo lo que elijas sea eficiente energéticamente hablando, pero sobre todo la
+nevera, ya que, suele ser uno de los mayores consumos diarios que hay en las camper.
 
+Las neveras eficientes suelen tener un consumo diario de entre 190Wh y 250Wh, ya que aunque la nevera
+esté conectada 24 horas su compresor no está funcionando las 24 horas. De media suele trabajar de 6 a 8
+horas dependiendo del calor que haga fuera, y de la temperatura que pongamos interna de la nevera.
 
-            <h2 class="calculadora-toggle-header">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/panelsolar.png" alt="panel solar"
-                    class="row-icon">
-                PANEL SOLAR
-            </h2>
-            <h3 class="blue-subtitle">¿Desea instalar un panel solar?</h3>
-            <div class="panel-question">
-                <div>
-                    <input type="radio" value="1" name="solar-panel" id="panel-yes" onchange="handlePanelChange()"
-                        checked /><label for="panel-yes">Si</label>
-                </div>
-                <div>
-                    <input type="radio" value="0" name="solar-panel" id="panel-no"
-                        onchange="handlePanelChange()" /><label for="panel-no">No</label>
-                </div>
-            </div>
-            <div class="card-panel --green">
-                <div class="top-row">
-                    <span>Panel Solar</span>
-                    <div class="circle-image">
-                        <!-- <img src="https://www.ingenaga.com/wp-content/uploads/2024/09/ChGYFg.tif@8x-8.png" alt=""> -->
-                        <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="">
-                    </div>
-                </div>
-                <div class="card-panel-content">
-                    <div class="consumo-resultados-row panel-row">
-                        <span>Consumos totales</span>
-                        <span class="panel-solar-consumo-total">&nbsp;</span>
-                    </div>
-                    <div class="consumo-resultados-row blue-bg panel-row" style="margin-bottom:20px">
-                        <span>Potencia mínima del panel solar</span>
-                        <span class="panel-solar-potencia-minima">&nbsp;</span>
-                    </div>
-                    <small class="panel-note"><i><b><span>ⓘ &nbsp;</span><span>La potencia mínima recomendada la podrá
-                                    instalar con uno o más paneles.</span></b></i></small>
-                </div>
-            </div>
-            <h2 class="calculadora-toggle-header">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/bateriaaux.png" alt="bateria auxiliar"
-                    class="row-icon">
-                BATERÍA AUXILIAR
-            </h2>
-            <h3 class="blue-subtitle">Elija una opción del tipo de batería</h3>
-            <div class="fila-bateria">
-                <div class="medida">
-                    <div class="seleccionar-medida-bateria">
-                        <span class="medida medida-buscador medida-life selected">LiFePO4</span>
-                        <span class="medida medida-buscador medida-gel">GEL/AGM</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card-panel --green">
-                <div class="top-row">
-                    <span class="tipo-bateria-text">LiFePO4</span>
-                    <div class="circle-image">
-                        <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="">
-                    </div>
-                </div>
-                <div class="card-panel-content">
-                    <span class="with-solar-panel-text">&nbsp;</span>
-                    <div class="consumo-resultados-row panel-row potencia-panel-elegido">
-                        <span>Potencia del panel solar elegido (W)</span>
-                        <input type="number" min="0" max="1000" step="5" class="potencia-panel-elegido-value"
-                            onchange="calcularBateria()">
-                    </div>
-                    <div class="consumo-resultados-row panel-row numero-dias-autonomia">
-                        <span>Número de días de autonomía</span>
-                        <input type="number" min="1" max="30" step="1" class="numero-dias-autonomia-value"
-                            onchange="calcularBateria()">
-                    </div>
-                    <div class="consumo-resultados-row blue-bg panel-row calculo-bateria-minima"
-                        style="margin-bottom:20px">
-                        <span>Cálculo de batería mínima</span>
-                        <span class="calculo-bateria-minima-value">&nbsp;</span>
-                    </div>
-                    <small class="panel-note"><i><b><span>ⓘ &nbsp;</span><span>Lo normal es calcular la instalación con
-                                    2 a 3 días de autonomía.</span></b></i></small>
-                </div>
-            </div>
-            <!-- Regulador Solar -->
-            <div class="panel-regulador-solar">
-                <h2 class="calculadora-toggle-header">
-                    <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/bateriaaux.png" alt="bateria auxiliar"
-                        class="row-icon">
-                    REGULADOR SOLAR
-                </h2>
-                <h3 class="blue-subtitle">Elija una opción del tipo de batería</h3>
-                <div class="fila-bateria">
-                    <div class="medida">
-                        <div class="seleccionar-medida-bateria">
-                            <span class="medida medida-buscador medida-life selected">LiFePO4</span>
-                            <span class="medida medida-buscador medida-gel">GEL/AGM</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-panel --green">
-                    <div class="top-row">
-                        <span class="tipo-bateria-text">LiFePO4</span>
-                        <div class="circle-image">
-                            <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="">
-                        </div>
-                    </div>
-                    <div class="card-panel-content">
-                        <div class="consumo-resultados-row panel-row potencia-panel-elegido">
-                            <span>Potencia del panel solar elegido (W)</span>
-                            <input type="number" min="0" max="1000" step="5"
-                                class="potencia-panel-elegido-regulador-value" onchange="calcularReguladorSolar()">
-                        </div>
-                        <div class="consumo-resultados-row blue-bg panel-row calculo-regulador-solar-minimo"
-                            style="margin-bottom:20px">
-                            <span>Regulador solar mínimo a instalar (A)</span>
-                            <span class="calculo-regulador-solar-minimo-value">&nbsp;</span>
-                        </div>
-                        <!-- <small class="panel-note"><i><b><span>ⓘ &nbsp;</span><span>Lo normal es calcular la instalación con 2 a 3 días de autonomía.</span></b></i></small> -->
-                    </div>
-                </div>
-            </div>
-            <!-- Seccion Booster -->
-            <h2 class="calculadora-toggle-header">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/booster.png" alt="booster"
-                    class="row-icon">
-                BOOSTER
-            </h2>
-            <h3 class="blue-subtitle">¿Vas a conectar las baterías principal y secundaria con un booster?</h3>
-            <small class="booster-panel-note"><i><b><span>ⓘ &nbsp;</span><span>Si vas a instalar un relé ten en cuenta
-                            que cumpla con R10 y tenga una capacidad mínima de 120A.</span></b></i></small>
-            <div class="panel-question booster-panel-question" style="margin-top: 10px;">
-                <div>
-                    <input type="radio" value="1" name="booster" id="panel-booster-yes"
-                        onchange="handleBoosterPanelChange()" checked /><label for="panel-booster-yes">Si</label>
-                </div>
-                <div>
-                    <input type="radio" value="0" name="booster" id="panel-booster-no"
-                        onchange="handleBoosterPanelChange()" /><label for="panel-booster-no">No</label>
-                </div>
-            </div>
-            <h3 class="blue-subtitle booster-subtitle">Elija una opción del tipo de batería</h3>
-            <div class="fila-bateria booster-fila-bateria">
-                <div class="medida">
-                    <div class="seleccionar-medida-bateria">
-                        <span class="medida medida-buscador medida-life selected">LiFePO4</span>
-                        <span class="medida medida-buscador medida-gel">GEL/AGM</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card-panel booster-card-panel --green">
-                <div class="top-row">
-                    <span class="tipo-bateria-text">LiFePO4</span>
-                    <div class="circle-image">
-                        <!-- <img src="https://www.ingenaga.com/wp-content/uploads/2024/09/ChGYFg.tif@8x-8.png" alt=""> -->
-                        <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="">
-                    </div>
-                </div>
-                <div class="card-panel-content">
-                    <div class="consumo-resultados-row panel-row">
-                        <span>Capacidad de batería elegida (Ah)</span>
-                        <input type="number" min="0" max="1000" step="5" class="capacidad-bateria-booster"
-                            onchange="calcularBooster()">
-                    </div>
-                    <div class="consumo-resultados-row blue-bg panel-row" style="margin-bottom:20px">
-                        <span>Booster mínimo a instalar (A)</span>
-                        <span class="booster-minimo-instalar">&nbsp;</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Inversor -->
-            <h2 class="calculadora-toggle-header">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/inversor.png" alt="booster"
-                    class="row-icon">
-                INVERSOR
-            </h2>
-            <h3 class="blue-subtitle">¿Vas a instalar un inversor?</h3>
-            <div class="panel-question booster-panel-question" style="margin-top: 10px;">
-                <div>
-                    <input type="radio" value="1" name="inversor" id="panel-inversor-yes"
-                        onchange="handleInversorPanelChange()" checked /><label for="panel-inversor-yes">Si</label>
-                </div>
-                <div>
-                    <input type="radio" value="0" name="inversor" id="panel-inversor-no"
-                        onchange="handleInversorPanelChange()" /><label for="panel-inversor-no">No</label>
-                </div>
-            </div>
-            <div class="card-panel inversor-card-panel --green">
-                <div class="top-row">
-                    <span class="tipo-bateria-text-no-edit">&nbsp;</span>
-                    <div class="circle-image">
-                        <!-- <img src="https://www.ingenaga.com/wp-content/uploads/2024/09/ChGYFg.tif@8x-8.png" alt=""> -->
-                        <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="">
-                    </div>
-                </div>
-                <div class="card-panel-content">
-                    <div class="consumo-resultados-row blue-bg panel-row" style="margin-bottom:20px">
-                        <span>Potencia mínima del inversor a instalar (W)</span>
-                        <span class="potencia-minima-inversor">&nbsp;</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Seccion Cargador -->
-            <h2 class="calculadora-toggle-header">
-                <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/cargadorbateria.png" alt="cargador bateria"
-                    class="row-icon">
-                CARGADOR DE BATERÍA
-            </h2>
-            <h3 class="blue-subtitle">¿Vas a instalar un cargador de baterías?</h3>
-            <div class="panel-question booster-panel-question" style="margin-top: 10px;">
-                <div>
-                    <input type="radio" value="1" name="cargador" id="panel-cargador-yes"
-                        onchange="handleCargadorPanelChange()" checked /><label for="panel-cargador-yes">Si</label>
-                </div>
-                <div>
-                    <input type="radio" value="0" name="cargador" id="panel-cargador-no"
-                        onchange="handleCargadorPanelChange()" /><label for="panel-cargador-no">No</label>
-                </div>
-            </div>
-            <h3 class="blue-subtitle cargador-subtitle">Elija una opción del tipo de batería</h3>
-            <div class="fila-bateria cargador-fila-bateria">
-                <div class="medida">
-                    <div class="seleccionar-medida-bateria">
-                        <span class="medida medida-buscador medida-life selected">LiFePO4</span>
-                        <span class="medida medida-buscador medida-gel">GEL/AGM</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card-panel cargador-card-panel --green">
-                <div class="top-row">
-                    <span class="tipo-bateria-text">LiFePO4</span>
-                    <div class="circle-image">
-                        <!-- <img src="https://www.ingenaga.com/wp-content/uploads/2024/09/ChGYFg.tif@8x-8.png" alt=""> -->
-                        <img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="">
-                    </div>
-                </div>
-                <div class="card-panel-content">
-                    <div class="consumo-resultados-row panel-row">
-                        <span>Capacidad de batería elegida (Ah)</span>
-                        <input type="number" min="0" max="1000" step="5" class="capacidad-bateria-cargador"
-                            onchange="calcularCargador()">
-                    </div>
-                    <div class="consumo-resultados-row blue-bg panel-row" style="margin-bottom:20px">
-                        <span> Cargador de batería mínimo (A)</span>
-                        <span class="cargador-minimo-instalar">&nbsp;</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="faq-section">
-            <h2>Preguntas Frecuentes</h2>
-            <div class="accordion-faq">
-                <div class="accordion-faq-item">
-                    <h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">
-                        FAQ 1? <span>+</span>
-                    </h2>
-                    <div class="accordion-faq-content">
-                        <p>Lorem fistrum a wan condemor quietooor a wan ahorarr condemor pecador a gramenawer te va a hasé pupitaa. Jarl hasta luego Lucas quietooor de la pradera diodeno no te digo trigo por no llamarte Rodrigor apetecan condemor. Condemor te va a hasé pupitaa ahorarr la caidita no te digo trigo por no llamarte Rodrigor pecador a peich papaar papaar. Condemor caballo blanco caballo negroorl diodenoo a gramenawer pupita está la cosa muy malar me cago en tus muelas papaar papaar apetecan torpedo jarl. Te voy a borrar el cerito hasta luego Lucas a wan no te digo trigo por no llamarte Rodrigor sexuarl. Tiene musho peligro torpedo jarl está la cosa muy malar te voy a borrar el cerito llevame al sircoo a peich. Benemeritaar a wan no puedor apetecan a peich a peich. De la pradera quietooor ese pedazo de está la cosa muy malar diodeno.</p>
-                    </div>
-                </div>
-                <div class="accordion-faq-item">
-                    <h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">
-                        FAQ 2? <span>+</span>
-                    </h2>
-                    <div class="accordion-faq-content">
-                        <p>Pecador caballo blanco caballo negroorl ese hombree la caidita la caidita tiene musho peligro apetecan torpedo. Fistro la caidita no puedor al ataquerl torpedo condemor ese pedazo de. Benemeritaar a peich torpedo no puedor va usté muy cargadoo la caidita.</p>
-                    </div>
-                </div>
-                <div class="accordion-faq-item">
-                    <h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">
-                        FAQ 3? <span>+</span>
-                    </h2>
-                    <div class="accordion-faq-content">
-                        <p>Quietooor a peich por la gloria de mi madre pupita apetecan. Papaar papaar ese pedazo de quietooor no te digo trigo por no llamarte Rodrigor sexuarl. Diodeno te voy a borrar el cerito hasta luego Lucas te va a hasé pupitaa de la pradera jarl pecador la caidita. Me cago en tus muelas te va a hasé pupitaa mamaar llevame al sircoo diodenoo qué dise usteer.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- Contenedor principal -->
+En cuanto al inversor, lo que hay que poner en la tabla no es la potencia que ofrece a 230V, ya que vas a
+calcular los consumos reales, es el consumo que tiene el simple hecho de estar encendido.
+
+Las calefacciones estacionarias tienen un consumo eléctrico, aunque vayan a gasoil, que hay que tener en
+cuenta y es el que proponemos en la tabla de referencia.
+
+</div>
+<h2 class="calculadora-toggle-header2"><span class="icon">▼</span>¿Cómo calculo la potencia si en las placas solares de especificaciones me da una
+intensidad en Amperios?</h2>
+<div class="calculadora-toggle-content2">
+
+Por ejemplo, podemos ver que una bomba de agua de 12V nos dice que consume 5 Amperios mientras se usa.
+Para sacar la potencia tendrías que multiplicar:
+
+Voltaje x Amperios = Potencia
+5 amperios x 12 Voltios = 60 Watios
+
+</div>
+<h2 class="calculadora-toggle-header"><span class="icon" style="visibility: hidden;">▼</span>calculadora de consumos</h2>
+<div class="calculadora-operations-container">
+<div class="consumo-operations">
+<div class="consumo-table-header">
+<div style="width: 30%;">Elemento</div>
+<div style="width: 15%;">Potencia
+(Watios)</div>
+<div style="width: 15%;">Tensión
+(Voltios)</div>
+<div style="width: 20%;">Tiempo de
+uso/día</div>
+<div style="width: 20%;">Unidades</div>
+</div>
+<div class="consumo-table-body">
+<div class="consumo-table-row-demo hide">
+<div class="consumo-elemento" style="width: 30%;"><!-- <input list="consumo-options" class="consumo-elemento" id="autocomplete-input" placeholder="Selecciona o escriba el elemento aquí"> -->
+<select>
+<option value="Iluminación tira de LED">Iluminación tira de LED</option>
+<option value="Puntos de luz (plafones)">Puntos de luz (plafones)</option>
+<option value="Flexos lectura">Flexos lectura</option>
+<option value="Calefacción estacionaria">Calefacción estacionaria</option>
+<option value="Extractores">Extractores</option>
+<option value="Ventilador claraboya">Ventilador claraboya</option>
+<option value="Bomba de agua sumergible">Bomba de agua sumergible</option>
+<option value="Bomba agua presión">Bomba agua presión</option>
+<option value="Calentador de agua">Calentador de agua</option>
+<option value="Cargador de baterías">Cargador de baterías</option>
+<option value="Cargador ordenador portátil 12V">Cargador ordenador portátil 12V</option>
+<option value="Cargador ordenador portátil 230V 65W">Cargador ordenador portátil 230V</option>
+</select>
+<select id="consumo-options">
+<option value="Cargador ordenador portátil 230V 65W">65W</option>
+<option value="Otro">Otro</option>
+</select></div>
+<div class="consumo-potencia" style="width: 15%;"><input class="option-watts" max="1200" min="0" name="option-watts" step="5" type="number" value="10" /></div>
+<div style="width: 15%;"><select id="" class="option-voltios" name="options-voltios">
+<option value="12">12 V</option>
+<option value="230">230 V</option>
+</select></div>
+<div style="width: 20%;"><select id="" class="option-tiempo" name="options-tiempo">
+<option value="0.08">5 min</option>
+<option value="0.16">10 min</option>
+<option value="0.25">15 min</option>
+<option value="0.5">30 min</option>
+<option value="0.75">45 min</option>
+<option selected="selected" value="1">1 hora</option>
+<option value="1.5">1.5 horas</option>
+<option value="2">2 horas</option>
+<option value="3">3 horas</option>
+<option value="4">4 horas</option>
+<option value="5">5 horas</option>
+<option value="6">6 horas</option>
+<option value="7">7 horas</option>
+<option value="8">8 horas</option>
+<option value="9">9 horas</option>
+<option value="10">10 horas</option>
+<option value="11">11 horas</option>
+<option value="12">12 horas</option>
+<option value="13">13 horas</option>
+<option value="14">14 horas</option>
+<option value="15">15 horas</option>
+</select></div>
+<div style="width: 20%; display: flex; flex-direction: column;"><!-- <input type="number" name="options-unidades" class="option-unidades" min="0" max="20" step="1" value="1" style="width: 75%;"/> -->
+<select id="" class="option-unidades" style="width: 75%;" name="option-unidades">
+<option selected="selected" value="1"></option>
+<option value="2"></option>
+<option value="3"></option>
+<option value="4"></option>
+<option value="5"></option>
+<option value="6"></option>
+<option value="7"></option>
+<option value="8"></option>
+<option value="9"></option>
+<option value="10"></option>
+<option value="11"></option>
+<option value="12"></option>
+<option value="13"></option>
+<option value="14"></option>
+<option value="15"></option>
+<option value="16"></option>
+<option value="17"></option>
+<option value="18"></option>
+<option value="19"></option>
+<option value="20"></option>
+</select>
+<img title="Eliminar elemento" src="https://www.ingenaga.com/wp-content/uploads/2024/11/trash.png" alt="" width="32px" height="40px" /></div>
+</div>
+</div>
+<!-- <button class="add-elemento"><span>⨁</span>&nbsp;<span>Agregar elemento</span></button> -->
+<img class="add-elemento" src="https://www.ingenaga.com/wp-content/uploads/2024/11/add-element.png" alt="" width="200px" />
+<div class="consumo-resultados">
+<div class="consumo-resultados-header">Resultados</div>
+<div class="consumo-resultados-row"><span class="consumo-resultados-title">Suma de consumos a 12V</span>
+<span class="consumo-resultados-12-value"> </span></div>
+<div class="consumo-resultados-row"><span class="consumo-resultados-title">Suma de consumos a 230V</span>
+<span class="consumo-resultados-230-value"> </span></div>
+<div class="consumo-resultados-row"><span class="consumo-resultados-title">Suma de consumos totales</span>
+<span class="consumo-resultados-total-value"> </span></div>
+</div>
+</div>
+</div>
+<div class="element-boxes hide">
+<div class="element panel-solar-element"><img class="alignnone" src="https://www.ingenaga.com/wp-content/uploads/2024/11/panel-solar-verde-gris.png" alt="Calculadora consumo camper" width="498" height="498" />
+<span class="element-title">Panel Solar (W)</span>
+<div class="panel-sugerido"><span class="detail">Sugerida</span>
+<span class="number"> </span></div>
+<div class="panel-seleccionado"><span class="detail">Seleccionada</span>
+<input class="number" disabled="disabled" max="1000" min="0" step="5" type="number" /></div>
+</div>
+<div class="element bateria-auxiliar-element hide-mobile"><img class="alignnone" src="https://www.ingenaga.com/wp-content/uploads/2024/11/bateria-verde-gris.png" alt="Calcular consumo batería camper" width="498" height="498" />
+<span class="element-title">Bateria Auxiliar (Ah)</span>
+<div class="bateria-sugerida"><span class="detail">Sugerida</span>
+<span class="number"> </span></div>
+<div class="bateria-seleccionada"><span class="detail">Seleccionada</span>
+<input class="number" disabled="disabled" max="1000" min="0" step="5" type="number" /></div>
+</div>
+<div class="element regulador-element hide-mobile"><img class="alignnone" src="https://www.ingenaga.com/wp-content/uploads/2024/11/regulador-verde-gris.png" alt="Calculo de consumo motorhome " width="497" height="498" />
+<span class="element-title">Regulador Solar (A)</span>
+<span class="element-number"> </span></div>
+<div class="element booster-element hide-mobile"><img class="alignnone" src="https://www.ingenaga.com/wp-content/uploads/2024/11/booster-verde-gris.png" alt="Consumo eléctrico camper" width="498" height="498" />
+<span class="element-title">Booster (A)</span>
+<span class="element-number"> </span></div>
+<div class="element inversor-element hide-mobile"><img class="alignnone" src="https://www.ingenaga.com/wp-content/uploads/2024/11/inversor-verde-gris.png" alt="¿Cuántos watts consume un camper?" width="498" height="498" />
+<span class="element-title">Inversor (W)</span>
+<span class="element-number"> </span></div>
+<div class="element cargador-element hide-mobile"><img class="alignnone" src="https://www.ingenaga.com/wp-content/uploads/2024/11/cargador-verde-gris.png" alt="Calculadora de consumos eléctricos para camper" width="498" height="498" />
+<span class="element-title">Cargador de Batería (A)</span>
+<span class="element-number"> </span></div>
+</div>
+<div class="mobile-navigation hide">
+<div class="navigation-circle panel-solar-circle filled"></div>
+<div class="navigation-circle bateria-circle"></div>
+<div class="navigation-circle regulador-circle"></div>
+<div class="navigation-circle booster-circle"></div>
+<div class="navigation-circle inversor-circle"></div>
+<div class="navigation-circle cargador-circle"></div>
+</div>
+<div class="activity-box panel-solar-box hide">
+<div class="control-box">
+
+<img class="alignnone" src="https://www.ingenaga.com/wp-content/uploads/2024/11/panel-solar-verde-blanco.png" alt="Calculadora de consumos eléctricos autocaravana" width="498" height="498" />
+<h3>¿DESEA INSTALAR UN PANEL SOLAR?</h3>
+<div class="fila-bateria">
+<div class="medida">
+<div class="seleccionar-medida-bateria panel-solar-pregunta"><span class="medida medida-buscador new-panel-yes selected">Si</span>
+<span class="medida medida-buscador new-panel-no">No</span></div>
+</div>
+</div>
+</div>
+<div class="navigation-box">
+<div class="navigation-button panel-previous" style="display: none;"><img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="" />
+Anterior</div>
+<div class="navigation-button panel-next"><img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="" />
+Siguiente</div>
+</div>
+<div class="result-box panel-solar-result-box">
+
+<img class="alignnone" src="https://www.ingenaga.com/wp-content/uploads/2024/11/panel-solar-verde-blanco.png" alt="¿Cómo calcular el consumo de una autocaravana? " width="498" height="498" />
+<h3>PANEL SOLAR</h3>
+<div class="summary-row default"><span class="title">Consumos Totales (Wh)</span>
+<span class="detail new-panel-consumo-total"> </span></div>
+<div class="summary-row gray"><span class="title">Potencia mínima del panel solar (W)</span>
+<span class="detail new-panel-potencia-minima"> </span></div>
+<div class="summary-row green"><span class="title"> Potencia del panel solar elegido (W)</span>
+<input class="new-panel-potencia-seccionada" max="1000" min="0" step="5" type="number" /></div>
+<div><span class="blue-note">La potencia mínima recomendada la podrá instalar con uno o más paneles</span></div>
+</div>
+</div>
+<div class="activity-box bateria-box hide">
+<div class="control-box">
+
+<img class="alignnone" src="https://www.ingenaga.com/wp-content/uploads/2024/11/bateria-verde-blanco.png" alt="¿Cuántos vatios necesito para una camper? " width="498" height="498" />
+<h3>BATERÍA AUXILIAR</h3>
+<h4>Elija una opción del tipo de batería</h4>
+<div class="fila-bateria">
+<div class="medida">
+<div class="seleccionar-medida-bateria bateria-pregunta"><span class="medida medida-buscador new-bateria-life selected">LiFePO4</span>
+<span class="medida medida-buscador new-bateria-gel">GEL/AGM</span></div>
+</div>
+</div>
+</div>
+<div class="navigation-box">
+<div class="navigation-button bateria-previous"><img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="" />
+Anterior</div>
+<div class="navigation-button bateria-next"><img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="" />
+Siguiente</div>
+</div>
+<div class="result-box bateria-result-box">
+
+<img class="alignnone" src="https://www.ingenaga.com/wp-content/uploads/2024/11/bateria-verde-blanco.png" alt="Cómo calcular cuánta batería necesita tu camper" width="498" height="498" />
+<h3>BATERÍA AUXILIAR</h3>
+<div class="summary-row default"><span class="title">Consumos totales (W)</span>
+<span class="detail new-bateria-total-consumos"> </span></div>
+<div class="summary-row default hide-at-solar-no"><span class="title">Potencia del panel solar elegido (W)</span>
+<span class="detail new-bateria-panel-seleccionado"> </span></div>
+<div class="summary-row default"><span class="title">Número de días de autonomía</span>
+<input class="new-bateria-dias-autonomia" max="30" min="1" step="1" type="number" value="1" /></div>
+<div class="summary-row green"><span class="title">Cálculo de batería mínima (Ah)</span>
+<span class="number new-bateria-minima"> </span></div>
+<div class="summary-row dark-green"><span class="title">Batería seleccionada (Ah)</span>
+<input class="new-bateria-seleccionada" max="1000" min="0" step="5" type="number" /></div>
+<span class="blue-note">Lo normal es calcular la instalación con 2 a 3 días de autonomía.</span>
+
+</div>
+</div>
+<div class="activity-box regulador-box hide">
+<div class="result-box regulador-result-box">
+
+<img class="alignnone" src="https://www.ingenaga.com/wp-content/uploads/2024/11/regulador-verde-blanco.png" alt="Calculadora de consumos eléctricos para furgoneta camper " width="497" height="498" />
+<h3>REGULADOR SOLAR</h3>
+<h4></h4>
+<div class="summary-row default"><span class="title">Potencia del panel solar elegido (W)</span>
+<span class="detail new-regulador-potencia"> </span></div>
+<div class="summary-row green"><span class="title">Regulador solar mínimo a instalar (A)</span>
+<span class="detail new-regulador-value"> </span></div>
+</div>
+<div class="navigation-box">
+<div class="navigation-button regulador-previous"><img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="" />
+Anterior</div>
+<div class="navigation-button regulador-next"><img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="" />
+Siguiente</div>
+</div>
+</div>
+<div class="activity-box booster-box hide">
+<div class="control-box">
+
+<img class="alignnone" src="https://www.ingenaga.com/wp-content/uploads/2024/11/booster-verde-blanco.png" alt="instalación eléctrica en una furgoneta camper" width="498" height="498" />
+<h3>¿VAS A CONECTAR LAS BATERÍAS PRINCIPAL Y SECUNDARIA?</h3>
+<div class="fila-bateria">
+<div class="medida">
+<div class="seleccionar-medida-bateria booster-pregunta"><span class="medida medida-buscador new-booster-yes selected">Si</span>
+<span class="medida medida-buscador new-booster-no">No</span></div>
+</div>
+</div>
+</div>
+<div class="navigation-box">
+<div class="navigation-button booster-previous"><img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="" />
+Anterior</div>
+<div class="navigation-button booster-next"><img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="" />
+Siguiente</div>
+</div>
+<div class="result-box booster-result-box">
+
+<img src="https://www.ingenaga.com/wp-content/uploads/2024/11/booster-verde-blanco.png" alt="" />
+<h3>BOOSTER</h3>
+<div class="summary-row default"><span class="title">Capacidad de batería elegida (Ah)</span>
+<span class="detail new-booster-capacidad-bateria"> </span></div>
+<div class="summary-row green"><span class="title">Booster mínimo a instalar (A)</span>
+<span class="detail new-booster-value"> </span></div>
+</div>
+</div>
+<div class="activity-box inversor-box hide">
+<div class="control-box">
+
+<img src="https://www.ingenaga.com/wp-content/uploads/2024/11/inversor-verde-blanco.png" alt="" />
+<h3>¿VAS A INSTALAR UN INVERSOR?</h3>
+<div class="fila-bateria">
+<div class="medida">
+<div class="seleccionar-medida-bateria inversor-pregunta"><span class="medida medida-buscador new-inversor-yes selected">Si</span>
+<span class="medida medida-buscador new-inversor-no">No</span></div>
+</div>
+</div>
+</div>
+<div class="navigation-box">
+<div class="navigation-button inversor-previous"><img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="" />
+Anterior</div>
+<div class="navigation-button inversor-next"><img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="" />
+Siguiente</div>
+</div>
+<div class="result-box inversor-result-box">
+
+<img src="https://www.ingenaga.com/wp-content/uploads/2024/11/inversor-verde-blanco.png" alt="" />
+<h3>INVERSOR</h3>
+<div class="summary-row green"><span class="title">Potencia mínima del inversor a instalar (W)</span>
+<span class="detail new-inversor-value"> </span></div>
+</div>
+</div>
+<div class="activity-box cargador-box hide">
+<div class="control-box">
+
+<img src="https://www.ingenaga.com/wp-content/uploads/2024/11/cargador-verde-blanco.png" alt="" />
+<h3>¿VAS A INSTALAR UN CARGADOR DE BATERÍAS?</h3>
+<div class="fila-bateria">
+<div class="medida">
+<div class="seleccionar-medida-bateria cargador-pregunta"><span class="medida medida-buscador new-cargador-yes selected">Si</span>
+<span class="medida medida-buscador new-cargador-no">No</span></div>
+</div>
+</div>
+</div>
+<div class="navigation-box">
+<div class="navigation-button cargador-previous"><img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-previous.png" alt="" />
+Anterior</div>
+<div class="navigation-button cargador-next" style="display: none;"><img src="https://www.ingenaga.com/wp-content/uploads/2024/11/button-next.png" alt="" />
+Siguiente</div>
+</div>
+<div class="result-box cargador-result-box">
+
+<img src="https://www.ingenaga.com/wp-content/uploads/2024/11/cargador-verde-blanco.png" alt="" />
+<h3>CARGADOR DE BATERÍAS</h3>
+<div class="summary-row default"><span class="title">Capacidad de batería elegida (Ah)</span>
+<span class="detail new-cargador-capacidad-bateria-value"> </span></div>
+<div class="summary-row green"><span class="title">Cargador de batería mínimo (A)</span>
+<span class="detail new-cargador-value"> </span></div>
+</div>
+</div>
+<div class="panel-calculations-container hide" style="display: none!important;">
+<h2 class="calculadora-toggle-header"><img class="row-icon" src="https://www.ingenaga.com/wp-content/uploads/2024/10/panelsolar.png" alt="panel solar" />
+PANEL SOLAR</h2>
+<h3 class="blue-subtitle">¿Desea instalar un panel solar?</h3>
+<div class="panel-question">
+<div><input id="panel-yes" checked="checked" name="solar-panel" type="radio" value="1" /><label for="panel-yes">Si</label></div>
+<div><input id="panel-no" name="solar-panel" type="radio" value="0" /><label for="panel-no">No</label></div>
+</div>
+<div class="card-panel --green">
+<div class="top-row">
+
+Panel Solar
+<div class="circle-image"><!-- <img src="https://www.ingenaga.com/wp-content/uploads/2024/09/ChGYFg.tif@8x-8.png" alt=""> -->
+<img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="" /></div>
+</div>
+<div class="card-panel-content">
+<div class="consumo-resultados-row panel-row">Consumos totales
+<span class="panel-solar-consumo-total"> </span></div>
+<div class="consumo-resultados-row blue-bg panel-row" style="margin-bottom: 20px;">Potencia mínima del panel solar
+<span class="panel-solar-potencia-minima"> </span></div>
+<small class="panel-note"><i><b>ⓘ  La potencia mínima recomendada la podrá
+instalar con uno o más paneles.</b></i></small>
+
+</div>
+</div>
+<h2 class="calculadora-toggle-header"><img class="row-icon" src="https://www.ingenaga.com/wp-content/uploads/2024/10/bateriaaux.png" alt="bateria auxiliar" />
+BATERÍA AUXILIAR</h2>
+<h3 class="blue-subtitle">Elija una opción del tipo de batería</h3>
+<div class="fila-bateria">
+<div class="medida">
+<div class="seleccionar-medida-bateria"><span class="medida medida-buscador medida-life selected">LiFePO4</span>
+<span class="medida medida-buscador medida-gel">GEL/AGM</span></div>
+</div>
+</div>
+<div class="card-panel --green">
+<div class="top-row">
+
+<span class="tipo-bateria-text">LiFePO4</span>
+<div class="circle-image"><img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="" /></div>
+</div>
+<div class="card-panel-content">
+
+<span class="with-solar-panel-text"> </span>
+<div class="consumo-resultados-row panel-row potencia-panel-elegido">Potencia del panel solar elegido (W)
+<input class="potencia-panel-elegido-value" max="1000" min="0" step="5" type="number" /></div>
+<div class="consumo-resultados-row panel-row numero-dias-autonomia">Número de días de autonomía
+<input class="numero-dias-autonomia-value" max="30" min="1" step="1" type="number" /></div>
+<div class="consumo-resultados-row blue-bg panel-row calculo-bateria-minima" style="margin-bottom: 20px;">Cálculo de batería mínima
+<span class="calculo-bateria-minima-value"> </span></div>
+<small class="panel-note"><i><b>ⓘ  Lo normal es calcular la instalación con
+2 a 3 días de autonomía.</b></i></small>
+
+</div>
+</div>
+<!-- Regulador Solar -->
+<div class="panel-regulador-solar">
+<h2 class="calculadora-toggle-header"><img class="row-icon" src="https://www.ingenaga.com/wp-content/uploads/2024/10/bateriaaux.png" alt="bateria auxiliar" />
+REGULADOR SOLAR</h2>
+<h3 class="blue-subtitle">Elija una opción del tipo de batería</h3>
+<div class="fila-bateria">
+<div class="medida">
+<div class="seleccionar-medida-bateria"><span class="medida medida-buscador medida-life selected">LiFePO4</span>
+<span class="medida medida-buscador medida-gel">GEL/AGM</span></div>
+</div>
+</div>
+<div class="card-panel --green">
+<div class="top-row">
+
+<span class="tipo-bateria-text">LiFePO4</span>
+<div class="circle-image"><img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="" /></div>
+</div>
+<div class="card-panel-content">
+<div class="consumo-resultados-row panel-row potencia-panel-elegido">Potencia del panel solar elegido (W)
+<input class="potencia-panel-elegido-regulador-value" max="1000" min="0" step="5" type="number" /></div>
+<div class="consumo-resultados-row blue-bg panel-row calculo-regulador-solar-minimo" style="margin-bottom: 20px;">Regulador solar mínimo a instalar (A)
+<span class="calculo-regulador-solar-minimo-value"> </span></div>
+<!-- <small class="panel-note"><i><b><span>ⓘ &nbsp;</span><span>Lo normal es calcular la instalación con 2 a 3 días de autonomía.</span></b></i></small> -->
+
+</div>
+</div>
+</div>
+<!-- Seccion Booster -->
+<h2 class="calculadora-toggle-header"><img class="row-icon" src="https://www.ingenaga.com/wp-content/uploads/2024/10/booster.png" alt="booster" />
+BOOSTER</h2>
+<h3 class="blue-subtitle">¿Vas a conectar las baterías principal y secundaria con un booster?</h3>
+<small class="booster-panel-note"><i><b>ⓘ  Si vas a instalar un relé ten en cuenta
+que cumpla con R10 y tenga una capacidad mínima de 120A.</b></i></small>
+<div class="panel-question booster-panel-question" style="margin-top: 10px;">
+<div><input id="panel-booster-yes" checked="checked" name="booster" type="radio" value="1" /><label for="panel-booster-yes">Si</label></div>
+<div><input id="panel-booster-no" name="booster" type="radio" value="0" /><label for="panel-booster-no">No</label></div>
+</div>
+<h3 class="blue-subtitle booster-subtitle">Elija una opción del tipo de batería</h3>
+<div class="fila-bateria booster-fila-bateria">
+<div class="medida">
+<div class="seleccionar-medida-bateria"><span class="medida medida-buscador medida-life selected">LiFePO4</span>
+<span class="medida medida-buscador medida-gel">GEL/AGM</span></div>
+</div>
+</div>
+<div class="card-panel booster-card-panel --green">
+<div class="top-row">
+
+<span class="tipo-bateria-text">LiFePO4</span>
+<div class="circle-image"><!-- <img src="https://www.ingenaga.com/wp-content/uploads/2024/09/ChGYFg.tif@8x-8.png" alt=""> -->
+<img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="" /></div>
+</div>
+<div class="card-panel-content">
+<div class="consumo-resultados-row panel-row">Capacidad de batería elegida (Ah)
+<input class="capacidad-bateria-booster" max="1000" min="0" step="5" type="number" /></div>
+<div class="consumo-resultados-row blue-bg panel-row" style="margin-bottom: 20px;">Booster mínimo a instalar (A)
+<span class="booster-minimo-instalar"> </span></div>
+</div>
+</div>
+<!-- Inversor -->
+<h2 class="calculadora-toggle-header"><img class="row-icon" src="https://www.ingenaga.com/wp-content/uploads/2024/10/inversor.png" alt="booster" />
+INVERSOR</h2>
+<h3 class="blue-subtitle">¿Vas a instalar un inversor?</h3>
+<div class="panel-question booster-panel-question" style="margin-top: 10px;">
+<div><input id="panel-inversor-yes" checked="checked" name="inversor" type="radio" value="1" /><label for="panel-inversor-yes">Si</label></div>
+<div><input id="panel-inversor-no" name="inversor" type="radio" value="0" /><label for="panel-inversor-no">No</label></div>
+</div>
+<div class="card-panel inversor-card-panel --green">
+<div class="top-row">
+
+<span class="tipo-bateria-text-no-edit"> </span>
+<div class="circle-image"><!-- <img src="https://www.ingenaga.com/wp-content/uploads/2024/09/ChGYFg.tif@8x-8.png" alt=""> -->
+<img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="" /></div>
+</div>
+<div class="card-panel-content">
+<div class="consumo-resultados-row blue-bg panel-row" style="margin-bottom: 20px;">Potencia mínima del inversor a instalar (W)
+<span class="potencia-minima-inversor"> </span></div>
+</div>
+</div>
+<!-- Seccion Cargador -->
+<h2 class="calculadora-toggle-header"><img class="row-icon" src="https://www.ingenaga.com/wp-content/uploads/2024/10/cargadorbateria.png" alt="cargador bateria" />
+CARGADOR DE BATERÍA</h2>
+<h3 class="blue-subtitle">¿Vas a instalar un cargador de baterías?</h3>
+<div class="panel-question booster-panel-question" style="margin-top: 10px;">
+<div><input id="panel-cargador-yes" checked="checked" name="cargador" type="radio" value="1" /><label for="panel-cargador-yes">Si</label></div>
+<div><input id="panel-cargador-no" name="cargador" type="radio" value="0" /><label for="panel-cargador-no">No</label></div>
+</div>
+<h3 class="blue-subtitle cargador-subtitle">Elija una opción del tipo de batería</h3>
+<div class="fila-bateria cargador-fila-bateria">
+<div class="medida">
+<div class="seleccionar-medida-bateria"><span class="medida medida-buscador medida-life selected">LiFePO4</span>
+<span class="medida medida-buscador medida-gel">GEL/AGM</span></div>
+</div>
+</div>
+<div class="card-panel cargador-card-panel --green">
+<div class="top-row">
+
+<span class="tipo-bateria-text">LiFePO4</span>
+<div class="circle-image"><!-- <img src="https://www.ingenaga.com/wp-content/uploads/2024/09/ChGYFg.tif@8x-8.png" alt=""> -->
+<img src="https://www.ingenaga.com/wp-content/uploads/2024/10/N7CKCQ.png" alt="" /></div>
+</div>
+<div class="card-panel-content">
+<div class="consumo-resultados-row panel-row">Capacidad de batería elegida (Ah)
+<input class="capacidad-bateria-cargador" max="1000" min="0" step="5" type="number" /></div>
+<div class="consumo-resultados-row blue-bg panel-row" style="margin-bottom: 20px;">Cargador de batería mínimo (A)
+<span class="cargador-minimo-instalar"> </span></div>
+</div>
+</div>
+</div>
+<div class="faq-section">
+<h2>Preguntas Frecuentes</h2>
+<div class="accordion-faq">
+<div class="accordion-faq-item">
+<h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">¿Cuántos vatios consume una camper? <span>+</span></h2>
+<div class="accordion-faq-content">
+
+El consumo eléctrico de una camper varía según los dispositivos y electrodomésticos utilizados. Por ejemplo, una instalación eléctrica con una potencia recomendada de 1.250 vatios puede alimentar simultáneamente.
+
+Por eso existe la herramienta como calculadora para que puedas hacerlo bien.
+
+Es importante considerar que el consumo total dependerá del uso simultáneo de estos aparatos y de la capacidad de la batería instalada.
+
+</div>
+</div>
+<div class="accordion-faq-item">
+<h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">¿Cómo calcular se el consumo de una autocaravana? <span>+</span></h2>
+<div class="accordion-faq-content">
+
+Para calcular el consumo eléctrico de una autocaravana, sigue estos pasos:
+
+Identifica los dispositivos eléctricos y Haz una lista de todos los aparatos que planeas usar.
+
+Determina la potencia de cada dispositivo: Consulta las especificaciones de cada aparato para conocer su consumo en vatios (W). En la calculadora lo que damos es un aproximado promedio de cada una de ellas.
+
+Estima el tiempo de uso diario: Calcula cuántas horas al día utilizarás cada dispositivo.
+
+Calcula el consumo diario por dispositivo: Multiplica la potencia del dispositivo por las horas de uso diario.
+
+Fórmula: Consumo (Wh) = Potencia (W) × Horas de uso
+Suma el consumo total diario: Agrega el consumo de todos los dispositivos para obtener el consumo total en vatios-hora (Wh).
+
+Convierte a amperios-hora (Ah): Divide el consumo total en Wh entre el voltaje del sistema eléctrico de tu autocaravana (generalmente 12V).
+
+Fórmula: Consumo (Ah) = Consumo total (Wh) ÷ Voltaje (V)
+Este cálculo te ayudará a dimensionar adecuadamente la capacidad de la batería y los paneles solares necesarios para tu autocaravana.
+A12V
+
+</div>
+</div>
+<div class="accordion-faq-item">
+<h2 class="accordion-faq-title" onclick="toggleFAQAccordion(this)">¿Cuántos vatios necesito para una camper? <span>+</span></h2>
+<div class="accordion-faq-content">
+
+La cantidad de vatios necesarios para una camper depende de tus necesidades energéticas y del equipamiento que planeas utilizar. Una instalación eléctrica con una potencia de 1.250 vatios es adecuada para una furgoneta de tamaño medio, permitiendo el uso simultáneo de varios dispositivos como nevera, secador, cafetera y televisión. Sin embargo, si planeas utilizar electrodomésticos de mayor consumo o varios dispositivos al mismo tiempo, es recomendable calcular tus necesidades específicas para determinar la potencia adecuada.
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Contenedor principal -->
 </body>
     
 </html>
